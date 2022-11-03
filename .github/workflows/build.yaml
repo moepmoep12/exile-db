@@ -1,0 +1,45 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  pre_job:
+    name: Check if skippable
+    continue-on-error: true
+    runs-on: ubuntu-latest
+
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          concurrent_skipping: "same_content"
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    needs: pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+
+    steps:
+      - name: Skip Duplicate Actions
+        uses: fkirc/skip-duplicate-actions@v3.4.0
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
