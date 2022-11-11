@@ -80,7 +80,6 @@
     "axios": "^1.1.3",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "debug": "^4.3.4",
     "dotenv": "^16.0.3",
     "dotenv-cli": "^6.0.0",
     "eslint": "^8.26.0",
@@ -98,7 +97,9 @@
   },
   "dependencies": {
     "better-sqlite3": "^7.6.2",
+    "debug": "^4.3.4",
     "kysely": "^0.22.0",
-    "poe-dat-export": "^1.0.1"
+    "poe-dat-export": "^1.0.1",
+    "yargs": "^17.6.2"
   }
 }

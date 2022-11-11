@@ -5,8 +5,6 @@ import { hideBin } from "yargs/helpers";
 import Debug from "debug";
 import fs from "fs";
 import path from "path";
-import { config } from "dotenv";
-config();
 
 import { PoEDB } from "./PoEDB";
 import { defaultDbPath } from "./utils/paths";
