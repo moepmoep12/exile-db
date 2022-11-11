@@ -42,7 +42,3 @@ jobs:
 
       - name: Run mocha tests
         run: npm run test:ci
-
-      - name: Upload Code Coverage
-        if: ${{ !env.ACT }}
-        uses: codecov/codecov-action@v3

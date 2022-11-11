@@ -10,5 +10,8 @@
   ],
   "parserOptions": {
     "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "@typescript-eslint/restrict-template-expressions": 0
   }
 }

@@ -7,6 +7,6 @@ module.exports = {
   extension: [
     "ts"
   ],
-  "parallel": true
+  "parallel": false
 };
 

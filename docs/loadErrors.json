@@ -1,0 +1,152 @@
+{
+  "AlternateQualityCurrencyDecayFactors": {
+    "error": "Failed to find sequence for path Data/AlternateQualityCurrencyDecayFactors.dat64"
+  },
+  "AtlasAwakeningStats": {
+    "error": "Failed to find sequence for path Data/AtlasAwakeningStats.dat64"
+  },
+  "AtlasBaseTypeDrops": {
+    "error": "Failed to find sequence for path Data/AtlasBaseTypeDrops.dat64"
+  },
+  "AtlasRegionUpgradesInventoryLayout": {
+    "error": "Failed to find sequence for path Data/AtlasRegionUpgradesInventoryLayout.dat64"
+  },
+  "AtlasRegions": {
+    "error": "Failed to find sequence for path Data/AtlasRegions.dat64"
+  },
+  "AtlasSector": {
+    "error": "Failed to find sequence for path Data/AtlasSector.dat64"
+  },
+  "AtlasSkillGraphs": {
+    "error": "Failed to find sequence for path Data/AtlasSkillGraphs.dat64"
+  },
+  "BestiaryEncounters": {
+    "error": "Offset is outside the bounds of the DataView"
+  },
+  "BeyondDemons": {
+    "error": "Failed to find sequence for path Data/BeyondDemons.dat64"
+  },
+  "Bloodlines": {
+    "error": "Failed to find sequence for path Data/Bloodlines.dat64"
+  },
+  "CharacterAudioEvents": {
+    "error": "Invalid array length"
+  },
+  "CustomLeagueMods": {
+    "error": "Failed to find sequence for path Data/CustomLeagueMods.dat64"
+  },
+  "EventSeason": {
+    "error": "Failed to find sequence for path Data/EventSeason.dat64"
+  },
+  "EventSeasonRewards": {
+    "error": "Failed to find sequence for path Data/EventSeasonRewards.dat64"
+  },
+  "HarvestCraftOptions": {
+    "error": "Offset is outside the bounds of the DataView"
+  },
+  "HarvestDurability": {
+    "error": "Failed to find sequence for path Data/HarvestDurability.dat64"
+  },
+  "HarvestEncounterScaling": {
+    "error": "Failed to find sequence for path Data/HarvestEncounterScaling.dat64"
+  },
+  "HarvestObjects": {
+    "error": "Failed to find sequence for path Data/HarvestObjects.dat64"
+  },
+  "HarvestPlantBoosters": {
+    "error": "Failed to find sequence for path Data/HarvestPlantBoosters.dat64"
+  },
+  "HarvestSeedTypes": {
+    "error": "Failed to find sequence for path Data/HarvestSeedTypes.dat64"
+  },
+  "HarvestSeeds": {
+    "error": "Offset is outside the bounds of the DataView"
+  },
+  "HarvestStorageLayout": {
+    "error": "Failed to find sequence for path Data/HarvestStorageLayout.dat64"
+  },
+  "ItemShopType": {
+    "error": "Failed to find sequence for path Data/ItemShopType.dat64"
+  },
+  "ItemThemes": {
+    "error": "Failed to find sequence for path Data/ItemThemes.dat64"
+  },
+  "MasterHideoutLevels": {
+    "error": "Failed to find sequence for path Data/MasterHideoutLevels.dat64"
+  },
+  "MicrotransactionGemCategory": {
+    "error": "Failed to find sequence for path Data/MicrotransactionGemCategory.dat64"
+  },
+  "MissionFavourPerLevel": {
+    "error": "Failed to find sequence for path Data/MissionFavourPerLevel.dat64"
+  },
+  "NPCTalk": {
+    "error": "Invalid array length"
+  },
+  "PantheonPanelLayout": {
+    "error": "Offset is outside the bounds of the DataView"
+  },
+  "PerandusBosses": {
+    "error": "Failed to find sequence for path Data/PerandusBosses.dat64"
+  },
+  "PerandusChests": {
+    "error": "Failed to find sequence for path Data/PerandusChests.dat64"
+  },
+  "PerandusDaemons": {
+    "error": "Failed to find sequence for path Data/PerandusDaemons.dat64"
+  },
+  "PerandusGuards": {
+    "error": "Failed to find sequence for path Data/PerandusGuards.dat64"
+  },
+  "ProjectileVariations": {
+    "error": "Failed to find sequence for path Data/ProjectileVariations.dat64"
+  },
+  "Prophecies": {
+    "error": "Failed to find sequence for path Data/Prophecies.dat64"
+  },
+  "ProphecyChain": {
+    "error": "Failed to find sequence for path Data/ProphecyChain.dat64"
+  },
+  "ProphecyType": {
+    "error": "Failed to find sequence for path Data/ProphecyType.dat64"
+  },
+  "ShopCategory": {
+    "error": "Failed to find sequence for path Data/ShopCategory.dat64"
+  },
+  "ShopCountry": {
+    "error": "Failed to find sequence for path Data/ShopCountry.dat64"
+  },
+  "ShopCurrency": {
+    "error": "Failed to find sequence for path Data/ShopCurrency.dat64"
+  },
+  "ShopPaymentPackage": {
+    "error": "Failed to find sequence for path Data/ShopPaymentPackage.dat64"
+  },
+  "ShopPaymentPackagePrice": {
+    "error": "Failed to find sequence for path Data/ShopPaymentPackagePrice.dat64"
+  },
+  "ShopRegion": {
+    "error": "Failed to find sequence for path Data/ShopRegion.dat64"
+  },
+  "ShopToken": {
+    "error": "Failed to find sequence for path Data/ShopToken.dat64"
+  },
+  "ShrineBuffs": {
+    "error": "Failed to find sequence for path Data/ShrineBuffs.dat64"
+  },
+  "StrDexIntMissionExtraRequirement": {
+    "error": "Failed to find sequence for path Data/StrDexIntMissionExtraRequirement.dat64"
+  },
+  "StrDexIntMissions": {
+    "error": "Failed to find sequence for path Data/StrDexIntMissions.dat64"
+  },
+  "SupporterPackSets": {
+    "error": "Failed to find sequence for path Data/SupporterPackSets.dat64"
+  },
+  "TreasureHunterMissions": {
+    "error": "Failed to find sequence for path Data/TreasureHunterMissions.dat64"
+  },
+  "UniqueMapInfo": {
+    "error": "Failed to find sequence for path Data/UniqueMapInfo.dat64"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "DelveFlares": {
+    "error": "Schema of table DelveFlares contains no valid columns"
+  },
+  "DelveRewardTierConstants": {
+    "error": "Schema of table DelveRewardTierConstants contains no valid columns"
+  },
+  "AfflictionBalancePerLevel": {
+    "error": "Schema of table AfflictionBalancePerLevel contains no valid columns"
+  },
+  "HarvestSpecialCraftCosts": {
+    "error": "Schema of table HarvestSpecialCraftCosts contains no valid columns"
+  },
+  "HarvestSpecialCraftOptions": {
+    "error": "Schema of table HarvestSpecialCraftOptions contains no valid columns"
+  },
+  "HeistChokepointFormation": {
+    "error": "Schema of table HeistChokepointFormation contains no valid columns"
+  },
+  "SentinelPassiveStats": {
+    "error": "Schema of table SentinelPassiveStats contains no valid columns"
+  },
+  "SentinelPowerExpLevels": {
+    "error": "Schema of table SentinelPowerExpLevels contains no valid columns"
+  },
+  "AreaTransitionInfo": {
+    "error": "Schema of table AreaTransitionInfo contains no valid columns"
+  },
+  "AtlasFog": {
+    "error": "Schema of table AtlasFog contains no valid columns"
+  },
+  "AtlasRegionUpgradeRegions": {
+    "error": "Schema of table AtlasRegionUpgradeRegions contains no valid columns"
+  },
+  "EffectDrivenSkill": {
+    "error": "Schema of table EffectDrivenSkill contains no valid columns"
+  },
+  "EinharPackFallback": {
+    "error": "Schema of table EinharPackFallback contains no valid columns"
+  },
+  "EvergreenAchievements": {
+    "error": "Schema of table EvergreenAchievements contains no valid columns"
+  },
+  "FixedMissions": {
+    "error": "Schema of table FixedMissions contains no valid columns"
+  },
+  "GamepadButton": {
+    "error": "Schema of table GamepadButton contains no valid columns"
+  },
+  "GeometryAttack": {
+    "error": "Schema of table GeometryAttack contains no valid columns"
+  },
+  "GeometryProjectiles": {
+    "error": "Schema of table GeometryProjectiles contains no valid columns"
+  },
+  "GeometryTrigger": {
+    "error": "Schema of table GeometryTrigger contains no valid columns"
+  },
+  "GiftWrapArtVariations": {
+    "error": "Schema of table GiftWrapArtVariations contains no valid columns"
+  },
+  "JobAssassinationSpawnerGroups": {
+    "error": "Schema of table JobAssassinationSpawnerGroups contains no valid columns"
+  },
+  "LeagueStaticRewards": {
+    "error": "Schema of table LeagueStaticRewards contains no valid columns"
+  },
+  "MicrotransactionCursorVariations": {
+    "error": "Schema of table MicrotransactionCursorVariations contains no valid columns"
+  },
+  "MicrotransactionRecycleOutcomes": {
+    "error": "Schema of table MicrotransactionRecycleOutcomes contains no valid columns"
+  },
+  "MiniQuestStates": {
+    "error": "Schema of table MiniQuestStates contains no valid columns"
+  },
+  "MiscEffectPacksArtVariations": {
+    "error": "Schema of table MiscEffectPacksArtVariations contains no valid columns"
+  },
+  "MiscObjectsArtVariations": {
+    "error": "Schema of table MiscObjectsArtVariations contains no valid columns"
+  },
+  "MonsterDeathConditions": {
+    "error": "Schema of table MonsterDeathConditions contains no valid columns"
+  },
+  "MonsterPackCounts": {
+    "error": "Schema of table MonsterPackCounts contains no valid columns"
+  },
+  "MoveDaemon": {
+    "error": "Schema of table MoveDaemon contains no valid columns"
+  },
+  "MultiPartAchievementAreas": {
+    "error": "Schema of table MultiPartAchievementAreas contains no valid columns"
+  },
+  "NPCTalkCategory": {
+    "error": "Schema of table NPCTalkCategory contains no valid columns"
+  },
+  "PCBangRewardMicros": {
+    "error": "Schema of table PCBangRewardMicros contains no valid columns"
+  },
+  "RunicCircles": {
+    "error": "Schema of table RunicCircles contains no valid columns"
+  },
+  "SpawnObject": {
+    "error": "Schema of table SpawnObject contains no valid columns"
+  },
+  "TableCharge": {
+    "error": "Schema of table TableCharge contains no valid columns"
+  },
+  "TalkingPetNPCAudio": {
+    "error": "Schema of table TalkingPetNPCAudio contains no valid columns"
+  },
+  "TalkingPets": {
+    "error": "Schema of table TalkingPets contains no valid columns"
+  },
+  "TriggerBeam": {
+    "error": "Schema of table TriggerBeam contains no valid columns"
+  },
+  "ZanaLevels": {
+    "error": "Schema of table ZanaLevels contains no valid columns"
+  }
+}

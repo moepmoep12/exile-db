@@ -1,2 +1,133 @@
 # poe-db
-Typed database containing static resources of the game Path of Exile (PoE)
+
+![NPM Version](https://img.shields.io/npm/v/npm) ![LICENSE](https://img.shields.io/github/license/moepmoep12/poe-db) ![TOP LANGUAGE](https://img.shields.io/github/languages/top/moepmoep12/poe-db) ![ISSUES](https://img.shields.io/github/issues/moepmoep12/poe-db)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Getting started](#getting-started)
+- [Notes](#notes)
+  - [Missing tables](#missing-tables)
+  - [Foreign key constraint](#foreign-key-constraint)
+  - [The \_index column](#the-_index-column)
+- [Debug](#debug)
+- [Related projects](#related-projects)
+
+## Introduction
+
+The purpose of this library is to provide a database to developers containing data from the game [Path of Exile](https://www.pathofexile.com/) (PoE) by Grinding Gear Games.
+The database is provided as a SQLite database and contains only the tables and their schema without data. The library provides an API & CLI for loading the table data dynamically.
+Queries are built with [kysely](https://github.com/koskimas/kysely). Because the database is a SQLite database, it can be used outside of JS/TS applications.
+
+> Note: This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+
+## Overview
+
+The key objectives of this library are:
+
+- Provide SQLite database for game data
+- Provide API & CLI to load the desired tables dynamically
+- Support all languages
+
+## Installation
+
+Install the latest stable version of this library:
+
+```bash
+ npm install --save poe-db
+```
+
+## Getting started
+
+Since the database is initially empty (only containing the schema), the desired tables need to be loaded first. Which tables to load depends on the application.
+This can be done either at runtime, where a check is performed if the table has been loaded yet, with a custom script, or by using the CLI.
+
+For exmaple, a custom script could load the tables:
+
+```typescript
+import { PoEDB, Language, Schema } from "poe-db";
+
+const requiredTables: Array<keyof Schema.DB> = [
+  "BaseItemTypes",
+  "CurrencyItems",
+];
+
+const poedb = new PoEDB();
+
+await Promise.all(
+  requiredTables.map((table) => poedb.tryLoadTable(table, [Language.English]))
+);
+```
+
+Or the tables could be loaded via the CLI:
+
+```bash
+poe-db --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
+```
+
+Alternatively, the options could be loaded from a config JSON. See the Arguments interface for options.
+
+```bash
+poe-db --config ./config.json
+```
+
+```json
+{
+  // config.json
+  "tables": ["CurrencyItems", "BaseItemTypes"],
+  "database": "./test.db"
+}
+```
+
+Once the table data has been loaded it is persistently saved in the database and queries can be performed at runtime.
+
+```typescript
+try {
+  const results = await poedb
+    .selectFrom("CurrencyItems")
+    .innerJoin(
+      "BaseItemTypes",
+      "CurrencyItems.BaseItemTypesKey",
+      "BaseItemTypes._index"
+    )
+    .select("BaseItemTypes.Name")
+    .where("CurrencyItems.BaseItemTypesKey", "=", 20)
+    .limit(1)
+    .execute();
+
+  console.log(results); // [ { Name: 'Orb of Fusing' } ]
+} catch (error) {
+  // error handling
+}
+```
+
+## Notes
+
+### Missing tables
+
+Not all tables described in the Schema file are present in the database. There are two reasons why a table is not in the database:
+
+- The schema of the table contains only NULL columns, see [Build Errors](./docs/buildErrors.json) for a list
+- Loading data for the table fails, see [Load Errors](./docs/loadErrors.json) for a list
+
+### Foreign key constraint
+
+A constraint on foreign keys is not used due to the fact that tables are filled dynamically by the user.
+
+### The \_index column
+
+In some tables a column might refer to a another table (foreign key). However, it is not specified to which key the foreign key refers. In some cases it is the `_index` key like in the example above while in other cases it might be the `Id` column. Check the respective tables, for example via [poe-dat-viewer](https://github.com/SnosMe/poe-dat-viewer) before making queries.
+
+## Debug
+
+Debug information can be displayed by setting the `DEBUG` environment variable. In order to display debug information of all modules add `poe-db:*` to `DEBUG`. Multiple entries are separated by comma or space.
+For more information refer to the [debug library](<[https://](https://github.com/debug-js/debug)>).
+
+## Related projects
+
+- [poe-dat-export](https://github.com/moepmoep12/poe-dat-export)
+- [poe-dat-viewer](https://github.com/SnosMe/poe-dat-viewer)
+- [dat-schema](https://github.com/poe-tool-dev/dat-schema)
+- [RePoE](https://github.com/brather1ng/RePoE)
