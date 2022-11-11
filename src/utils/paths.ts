@@ -4,6 +4,8 @@ import fs from "fs";
 import { DB_FILE_NAME, DB_INTERFACE_FILE_NAME } from "../models/Constants";
 
 export const defaultDbPath = (): string => {
+  const filePath = path.join(__dirname, "../../dist", DB_FILE_NAME);
+  if (fs.existsSync(filePath)) return filePath;
   return path.join(__dirname, "../..", DB_FILE_NAME);
 };
 
