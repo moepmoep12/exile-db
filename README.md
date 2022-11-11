@@ -67,7 +67,7 @@ Or the tables could be loaded via the CLI:
 poe-db --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
 ```
 
-Alternatively, the options could be loaded from a config JSON. See the Arguments interface for options.
+Alternatively, the options could be loaded from a config JSON. See the [Arguments](https://github.com/moepmoep12/poe-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
 
 ```bash
 poe-db --config ./config.json
@@ -107,7 +107,7 @@ try {
 
 ### Missing tables
 
-Not all tables described in the Schema file are present in the database. There are two reasons why a table is not in the database:
+Not all tables described in the [schema file](https://github.com/poe-tool-dev/dat-schema/releases/download/latest/schema.min.json) are present in the database. There are two reasons why a table is not in the database:
 
 - The schema of the table contains only NULL columns, see [Build Errors](./docs/buildErrors.json) for a list
 - Loading data for the table fails, see [Load Errors](./docs/loadErrors.json) for a list
