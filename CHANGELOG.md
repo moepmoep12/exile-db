@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/moepmoep12/poe-db/compare/v1.0.2...v1.0.3) (2022-11-11)
+
+
+### Bug Fixes
+
+* default db path ([d9ea704](https://github.com/moepmoep12/poe-db/commit/d9ea70462249d2718f25738c7d3af29059857ecf))
+
 ## [1.0.2](https://github.com/moepmoep12/poe-db/compare/v1.0.1...v1.0.2) (2022-11-11)
 
 
