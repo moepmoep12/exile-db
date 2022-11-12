@@ -42,9 +42,29 @@ Install the latest stable version of this library:
 ## Getting started
 
 Since the database is initially empty (only containing the schema), the desired tables need to be loaded first. Which tables to load depends on the application.
-This can be done either at runtime, where a check is performed if the table has been loaded yet, with a custom script, or by using the CLI.
+This can be done either at runtime, e.g. when the application starts, with a custom script (not at runtime), or by using the CLI (recommended).
 
-For exmaple, a custom script could load the tables:
+Loading once via the CLI:
+
+```bash
+poe-db load --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
+```
+
+Alternatively, the options could be loaded from a config JSON. This is recommended for most applications because one has not to remember all the required tables for every new patch. See the [Arguments](https://github.com/moepmoep12/poe-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
+
+```bash
+poe-db load --config ./poedb.config.json
+```
+
+```json
+// poedb.config.json
+{
+  "tables": ["CurrencyItems", "BaseItemTypes"],
+  "database": "./test.db"
+}
+```
+
+Furthermore, a custom script could be used to load the tables:
 
 ```typescript
 import { PoEDB, Language, Schema } from "poe-db";
@@ -61,27 +81,10 @@ await Promise.all(
 );
 ```
 
-Or the tables could be loaded via the CLI:
 
-```bash
-poe-db load --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
-```
 
-Alternatively, the options could be loaded from a config JSON. See the [Arguments](https://github.com/moepmoep12/poe-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
-
-```bash
-poe-db load --config ./config.json
-```
-
-```json
-{
-  // config.json
-  "tables": ["CurrencyItems", "BaseItemTypes"],
-  "database": "./test.db"
-}
-```
-
-Once the table data has been loaded it is persistently saved in the database and queries can be performed at runtime.
+Once the table data has been loaded, it is persistently saved in the database and queries can be performed at runtime. 
+For details regarding the query builder refer to [kysely](https://github.com/koskimas/kysely).
 
 ```typescript
 try {
@@ -110,7 +113,7 @@ try {
 Not all tables described in the [schema file](https://github.com/poe-tool-dev/dat-schema/releases/download/latest/schema.min.json) are present in the database. There are two reasons why a table is not in the database:
 
 - The schema of the table contains only NULL columns, see [Build Errors](./docs/buildErrors.json) for a list
-- Loading data for the table fails, see [Load Errors](./docs/loadErrors.json) for a list
+- Loading data for the table fails, see [Load Errors](./docs/loadErrors.json) for a list. Some tables are listed in the schema but are actually not present in the current patch, thus loading them will always fail.
 
 ### Foreign key constraint
 
