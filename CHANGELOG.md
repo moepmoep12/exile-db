@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/moepmoep12/poe-db/compare/v1.1.0...v1.1.1) (2022-11-12)
+
+
+### Bug Fixes
+
+* Update README.md with new CLI ([388cb6e](https://github.com/moepmoep12/poe-db/commit/388cb6e9a25dc28b9c9c9e9e840bfa55b43b8d51))
+
 # [1.1.0](https://github.com/moepmoep12/poe-db/compare/v1.0.3...v1.1.0) (2022-11-12)
 
 
