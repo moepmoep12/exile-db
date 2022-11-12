@@ -55,10 +55,12 @@ export class PoEDB extends Kysely<Schema.DB> {
    *
    * @param table The name of the table
    * @param languages The languages in which the table will be loaded
+   * @param ignoreDuplicateError If set, insertion of existing rows does not throw an error
    */
   public async tryLoadTable(
     table: keyof Schema.DB,
-    languages: Array<Language> = [Language.English]
+    languages: Array<Language> = [Language.English],
+    ignoreDuplicateError = true
   ) {
     try {
       this._debug(`Loading table %s in languages %O`, table, languages);
@@ -70,7 +72,7 @@ export class PoEDB extends Kysely<Schema.DB> {
 
         this._preprocessData(data, lang);
 
-        await this._insertData(data, table);
+        await this._insertData(data, table, ignoreDuplicateError);
       }
     } catch (error) {
       this._debug(`Error while loading table %s: %O`, table, error);
@@ -80,7 +82,8 @@ export class PoEDB extends Kysely<Schema.DB> {
 
   protected async _insertData(
     data: Exporter.ExportResult[],
-    table: keyof Schema.DB
+    table: keyof Schema.DB,
+    ignoreDuplicateError: boolean
   ) {
     // do insertion in batches, otherwise the sql variable limit might be exceeded
     const keySize = Object.keys(data?.[0] || {}).length;
@@ -89,7 +92,10 @@ export class PoEDB extends Kysely<Schema.DB> {
 
     for (let index = 0; index < batches; index++) {
       const batch = data.slice(index * batchSize, (index + 1) * batchSize);
-      await this.insertInto(table).values(batch).execute();
+      let query = this.insertInto(table).values(batch);
+      if (ignoreDuplicateError)
+        query = query.onConflict((oc) => oc.doNothing());
+      await query.execute();
     }
 
     this._debug(`Inserted %d values into table %s`, data.length, table);

@@ -38,105 +38,154 @@ interface Arguments {
    * In which languages the tables will be loaded. Default: English
    */
   languages?: Array<Language>;
+
+  /**
+   * Whether duplicate key errors are ignored on insertion. Default: true
+   */
+  silent?: boolean;
+}
+
+Debug.enable("poe-db:*");
+const debug = Debug(`poe-db:`).extend("CLI");
+
+async function loadTables(config: Arguments) {
+  if (!config.tables || config.tables.length == 0) {
+    throw new Error(`No tables specified!`);
+  }
+
+  let dbPath = config.database;
+  if (dbPath && !path.isAbsolute(dbPath)) dbPath = path.resolve(dbPath);
+  if (!dbPath) dbPath = defaultDbPath();
+
+  if (dbPath && !fs.existsSync(dbPath)) {
+    debug(`DB not found at specified location. Copying database to %s`, dbPath);
+    fs.copyFileSync(defaultDbPath(), dbPath);
+  }
+
+  config.database = dbPath;
+  config.languages = config.languages ? config.languages : [Language.English];
+
+  debug(`Loading tables with config: %O`, config);
+
+  const poedb = new PoEDB(dbPath, config.cachedir, config.cacheduration);
+
+  for (const lang of config.languages) {
+    if (!Object.values(Language).includes(lang)) {
+      throw new Error(`Invalid language '${lang}'`);
+    }
+  }
+
+  for (const table of config.tables || []) {
+    await poedb.tryLoadTable(table, config.languages, config.silent);
+  }
+
+  debug(`Successfully loaded tables into db at %s`, dbPath);
+}
+
+async function clearDb(dbPath: string) {
+  debug(`Clearing database at %s`, dbPath);
+  const poedb = new PoEDB(dbPath);
+  const tables = await poedb.introspection.getTables();
+  for (const table of tables) {
+    await poedb.deleteFrom(table.name as keyof Schema.DB).execute();
+  }
+  debug(`Successfully cleared database at %s`, dbPath);
 }
 
 async function main() {
-  const debug = Debug(`poe-db:`).extend("CLI");
-  Debug.enable("poe-db:*,poe-dat:*");
   try {
     const parser = yargs(hideBin(process.argv))
-      .options({
-        tables: {
-          array: true,
-          alias: "t",
-          description: "The names of the tables to load",
+      .command(
+        ["load", "l"],
+        "Loads tables into the database",
+        (builder) => {
+          return builder
+            .options({
+              tables: {
+                array: true,
+                alias: "t",
+                description: "The names of the tables to load.",
+              },
+              config: {
+                type: "string",
+                alias: "c",
+                description:
+                  "Absolute or relative path to a config JSON file. Other CLI arguments will be ignored if specified.",
+              },
+              database: {
+                type: "string",
+                alias: "d",
+                description:
+                  "The path to the database. Can be either absolute or relative. If the database is not at the specified path, it will be copied from the default path in the node_modules.",
+              },
+              cachedir: {
+                type: "string",
+                description: "The directory used for caching.",
+              },
+              cacheduration: {
+                type: "number",
+                description:
+                  "The duration in ms for items to stay in in-memory cache.",
+              },
+              languages: {
+                type: "string",
+                alias: "l",
+                array: true,
+                description: "In which languages the tables will be loaded.",
+                choices: Object.values(Language),
+                default: [Language.English],
+              },
+              silent: {
+                type: "boolean",
+                alias: "s",
+                description:
+                  "Whether duplicate key errors are ignored on insertion.",
+                default: true,
+              },
+            })
+            .check((a) => {
+              return a.tables != undefined || a.config != undefined;
+            })
+            .strict();
         },
-        config: {
-          type: "string",
-          alias: "c",
-          description:
-            "Absolute or relative path to a config JSON file. Other CLI arguments will be ignored if specified.",
+        async (argv) => {
+          let config: Arguments = argv as Arguments;
+          if (argv.config) {
+            const configPath = path.isAbsolute(argv.config)
+              ? argv.config
+              : path.resolve(argv.config);
+
+            debug(`Reading config from path %s`, configPath);
+            config = JSON.parse(
+              fs.readFileSync(configPath).toString()
+            ) as Arguments;
+          }
+          await loadTables(config);
+        }
+      )
+      .command(
+        ["clear", "c", "delete"],
+        "Clears the database by removing all data",
+        (yarg) => {
+          return yarg.options({
+            database: {
+              type: "string",
+              alias: "d",
+              description:
+                "The path to the database. Can be either absolute or relative. If not provided, default path in the node_modules will be used.",
+              default: defaultDbPath(),
+            },
+          });
         },
-        database: {
-          type: "string",
-          alias: "d",
-          description:
-            "The path to the database. Can be either absolute or relative. If the database is not at the specified path, it will be copied from the default path in the node_modules.",
-        },
-        cachedir: {
-          type: "string",
-          description: "The directory for caching",
-        },
-        cacheduration: {
-          type: "number",
-          description:
-            "The duration in ms for items to stay in in-memory cache",
-        },
-        languages: {
-          type: "string",
-          alias: "l",
-          array: true,
-          description:
-            "In which languages the tables will be loaded. Default: English",
-          choices: Object.values(Language),
-        },
-      })
-      .check((a) => {
-        return a.tables != undefined || a.config != undefined;
-      })
-      .strict();
-
-    const argv = await parser.argv;
-
-    let config: Arguments;
-
-    if (argv.config) {
-      const configPath = path.isAbsolute(argv.config)
-        ? argv.config
-        : path.resolve(argv.config);
-
-      debug(`Reading config from path %s`, configPath);
-      config = JSON.parse(fs.readFileSync(configPath).toString()) as Arguments;
-      if (!config.tables || config.tables.length == 0) {
-        throw new Error(`Tables not specified in config!`);
-      }
-    } else {
-      config = {
-        tables: argv.tables as Array<keyof Schema.DB>,
-        cachedir: argv.cachedir,
-        cacheduration: argv.cacheduration,
-        database: argv.database,
-        languages: argv.languages as Array<Language>,
-      };
-    }
-
-    let dbPath = config.database;
-    if (dbPath && !path.isAbsolute(dbPath)) dbPath = path.resolve(dbPath);
-    if (!dbPath) dbPath = defaultDbPath();
-
-    if (dbPath && !fs.existsSync(dbPath)) {
-      debug(
-        `DB not found at specified location. Copying database to %s`,
-        dbPath
+        async (argv) => {
+          let dbPath = argv.database;
+          if (dbPath && !path.isAbsolute(dbPath)) dbPath = path.resolve(dbPath);
+          if (!dbPath) dbPath = defaultDbPath();
+          await clearDb(dbPath);
+        }
       );
-      fs.copyFileSync(defaultDbPath(), dbPath);
-    }
 
-    const poedb = new PoEDB(dbPath, config.cachedir, config.cacheduration);
-
-    const languages = config.languages ? config.languages : [Language.English];
-
-    for (const lang of languages) {
-      if (!Object.values(Language).includes(lang)) {
-        throw new Error(`Invalid language '${lang}'`);
-      }
-    }
-
-    for (const table of config.tables || []) {
-      await poedb.tryLoadTable(table, languages);
-    }
-
-    debug(`Successfully loaded tables into db at %s`, dbPath);
+    await parser.argv;
   } catch (error) {
     debug("%O", error);
   }
