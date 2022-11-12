@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/moepmoep12/poe-db/compare/v1.1.1...v1.1.2) (2022-11-12)
+
+
+### Bug Fixes
+
+* Update README.md ([cc66670](https://github.com/moepmoep12/poe-db/commit/cc66670c3bd212f6bf798e1d84e96f88a9071835))
+
 ## [1.1.1](https://github.com/moepmoep12/poe-db/compare/v1.1.0...v1.1.1) (2022-11-12)
 
 
