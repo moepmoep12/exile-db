@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/moepmoep12/exile-db/compare/v1.1.2...v2.0.0) (2022-11-12)
+
+
+* Rename to exile-db ([88a1bba](https://github.com/moepmoep12/exile-db/commit/88a1bba7bf02bbf42c6f270e9c0aafa6f4a9f4b6))
+
+
+### BREAKING CHANGES
+
+* The package was renamed to exile-db to better distinguish it from the website poedb.tw
+
 ## [1.1.2](https://github.com/moepmoep12/exile-db/compare/v1.1.1...v1.1.2) (2022-11-12)
 
 ### Bug Fixes
