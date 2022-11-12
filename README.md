@@ -64,13 +64,13 @@ await Promise.all(
 Or the tables could be loaded via the CLI:
 
 ```bash
-poe-db --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
+poe-db load --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
 ```
 
 Alternatively, the options could be loaded from a config JSON. See the [Arguments](https://github.com/moepmoep12/poe-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
 
 ```bash
-poe-db --config ./config.json
+poe-db load --config ./config.json
 ```
 
 ```json
