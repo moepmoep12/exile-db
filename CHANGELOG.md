@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/moepmoep12/poe-db/compare/v1.0.3...v1.1.0) (2022-11-12)
+
+
+### Features
+
+* Add CLI commands & silent insert ([6638c54](https://github.com/moepmoep12/poe-db/commit/6638c5499e70ac4fa508a4b1249127bccf9ba532))
+
 ## [1.0.3](https://github.com/moepmoep12/poe-db/compare/v1.0.2...v1.0.3) (2022-11-11)
 
 
