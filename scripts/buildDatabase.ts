@@ -54,7 +54,7 @@ class DbBuilder {
 
   constructor() {
     this._dbPath = pathUtils.defaultDbPath();
-    this._debug = Debug(`poe-db:`).extend(this.constructor.name);
+    this._debug = Debug(`exile-db:`).extend(this.constructor.name);
 
     this._db = new Kysely<unknown>({
       dialect: new SqliteDialect({

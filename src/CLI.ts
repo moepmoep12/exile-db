@@ -45,8 +45,8 @@ interface Arguments {
   silent?: boolean;
 }
 
-Debug.enable("poe-db:*");
-const debug = Debug(`poe-db:`).extend("CLI");
+Debug.enable("exile-db:*");
+const debug = Debug(`exile-db:`).extend("CLI");
 
 async function loadTables(config: Arguments) {
   if (!config.tables || config.tables.length == 0) {

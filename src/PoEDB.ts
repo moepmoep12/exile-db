@@ -27,7 +27,7 @@ export class PoEDB extends Kysely<Schema.DB> {
 
     this._sqliteDb = db;
 
-    this._debug = Debug(`poe-db:`).extend(this.constructor.name);
+    this._debug = Debug(`exile-db:`).extend(this.constructor.name);
 
     this._debug(`Loaded DB from %s`, path);
 

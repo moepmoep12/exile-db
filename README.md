@@ -1,6 +1,6 @@
-# poe-db
+# exile-db
 
-![NPM Version](https://img.shields.io/npm/v/npm) ![LICENSE](https://img.shields.io/github/license/moepmoep12/poe-db) ![TOP LANGUAGE](https://img.shields.io/github/languages/top/moepmoep12/poe-db) ![ISSUES](https://img.shields.io/github/issues/moepmoep12/poe-db)
+![NPM Version](https://img.shields.io/npm/v/npm) ![LICENSE](https://img.shields.io/github/license/moepmoep12/exile-db) ![TOP LANGUAGE](https://img.shields.io/github/languages/top/moepmoep12/exile-db) ![ISSUES](https://img.shields.io/github/issues/moepmoep12/exile-db)
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ The key objectives of this library are:
 Install the latest stable version of this library:
 
 ```bash
- npm install --save poe-db
+ npm install --save exile-db
 ```
 
 ## Getting started
@@ -47,13 +47,13 @@ This can be done either at runtime, e.g. when the application starts, with a cus
 Loading once via the CLI:
 
 ```bash
-poe-db load --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
+exile-db load --tables CurrencyItems BaseItemTypes --languages English German --database ./mydb.db
 ```
 
-Alternatively, the options could be loaded from a config JSON. This is recommended for most applications because one has not to remember all the required tables for every new patch. See the [Arguments](https://github.com/moepmoep12/poe-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
+Alternatively, the options could be loaded from a config JSON. This is recommended for most applications because one has not to remember all the required tables for every new patch. See the [Arguments](https://github.com/moepmoep12/exile-db/blob/1df73b10062e04aeefa6ebc497b8caf7e0af7f0b/src/CLI.ts#L15) interface for options.
 
 ```bash
-poe-db load --config ./poedb.config.json
+exile-db load --config ./poedb.config.json
 ```
 
 ```json
@@ -67,7 +67,7 @@ poe-db load --config ./poedb.config.json
 Furthermore, a custom script could be used to load the tables:
 
 ```typescript
-import { PoEDB, Language, Schema } from "poe-db";
+import { PoEDB, Language, Schema } from "exile-db";
 
 const requiredTables: Array<keyof Schema.DB> = [
   "BaseItemTypes",
@@ -81,9 +81,7 @@ await Promise.all(
 );
 ```
 
-
-
-Once the table data has been loaded, it is persistently saved in the database and queries can be performed at runtime. 
+Once the table data has been loaded, it is persistently saved in the database and queries can be performed at runtime.
 For details regarding the query builder refer to [kysely](https://github.com/koskimas/kysely).
 
 ```typescript
@@ -125,7 +123,7 @@ In some tables a column might refer to a another table (foreign key). However, i
 
 ## Debug
 
-Debug information can be displayed by setting the `DEBUG` environment variable. In order to display debug information of all modules add `poe-db:*` to `DEBUG`. Multiple entries are separated by comma or space.
+Debug information can be displayed by setting the `DEBUG` environment variable. In order to display debug information of all modules add `exile-db:*` to `DEBUG`. Multiple entries are separated by comma or space.
 For more information refer to the [debug library](<[https://](https://github.com/debug-js/debug)>).
 
 ## Related projects
