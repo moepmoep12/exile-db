@@ -23,6 +23,8 @@ Queries are built with [kysely](https://github.com/koskimas/kysely). Because the
 
 > Note: This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
 
+> Note: The library was formerly known as `poe-db`. The name was changed to exile-db to distinguish it from the website [poedb.tw](https://poedb.tw/us/).
+
 ## Overview
 
 The key objectives of this library are:
