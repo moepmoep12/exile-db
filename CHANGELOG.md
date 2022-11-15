@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/moepmoep12/exile-db/compare/v2.0.0...v3.0.0) (2022-11-15)
+
+
+* Change row type to integer ([489a14d](https://github.com/moepmoep12/exile-db/commit/489a14d20af252b7ac7ffb64fa99089592270ce6))
+
+
+### BREAKING CHANGES
+
+* 'row' and 'foreignrow' columns are now all integer columns in SQLite
+
 # [2.0.0](https://github.com/moepmoep12/exile-db/compare/v1.1.2...v2.0.0) (2022-11-12)
 
 
