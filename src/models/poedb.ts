@@ -1,5 +1,5 @@
 export interface AbyssObjects {
-  AbyssalDepths: string | null;
+  AbyssalDepths: number | null;
   DaemonSpawners: string | null;
   Id: string | null;
   Language: string | null;
@@ -85,7 +85,7 @@ export interface ActiveSkills {
 }
 
 export interface ActiveSkillType {
-  FlagStat: string | null;
+  FlagStat: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -103,7 +103,7 @@ export interface Acts {
 }
 
 export interface AddBuffToTargetVarieties {
-  BuffDefinitions: string | null;
+  BuffDefinitions: number | null;
   Language: string | null;
   StatsKeys: string | null;
   _index: number | null;
@@ -160,7 +160,7 @@ export interface AfflictionEndgameWaveMods {
 
 export interface AfflictionFixedMods {
   Language: string | null;
-  Mod: string | null;
+  Mod: number | null;
   Rarity: number | null;
   _index: number | null;
 }
@@ -241,7 +241,7 @@ export interface AlternateQualityTypes {
 }
 
 export interface AlternateSkillTargetingBehaviours {
-  ClientStrings: string | null;
+  ClientStrings: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -315,7 +315,7 @@ export interface ArchnemesisMetaRewards {
 }
 
 export interface ArchnemesisModComboAchievements {
-  Achievement: string | null;
+  Achievement: number | null;
   Language: string | null;
   Mods: string | null;
   _index: number | null;
@@ -323,10 +323,10 @@ export interface ArchnemesisModComboAchievements {
 
 export interface ArchnemesisMods {
   Language: string | null;
-  Mod: string | null;
+  Mod: number | null;
   Name: string | null;
   TextStyles: string | null;
-  Visual: string | null;
+  Visual: number | null;
   _index: number | null;
 }
 
@@ -339,7 +339,7 @@ export interface ArchnemesisModVisuals {
 export interface ArchnemesisRecipes {
   Language: string | null;
   Recipe: string | null;
-  Result: string | null;
+  Result: number | null;
   _index: number | null;
 }
 
@@ -395,14 +395,14 @@ export interface Ascendancy {
 }
 
 export interface AtlasExileBossArenas {
-  Conqueror: string | null;
+  Conqueror: number | null;
   Language: string | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
 export interface AtlasExileInfluence {
-  Conqueror: string | null;
+  Conqueror: number | null;
   Language: string | null;
   Sets: string | null;
   _index: number | null;
@@ -410,7 +410,7 @@ export interface AtlasExileInfluence {
 
 export interface AtlasExiles {
   Id: string | null;
-  InfluencedItemIncrStat: string | null;
+  InfluencedItemIncrStat: number | null;
   Language: string | null;
   MapIcon: string | null;
   MapIcon2: string | null;
@@ -424,7 +424,7 @@ export interface AtlasFavouredMapSlots {
 }
 
 export interface AtlasInfluenceData {
-  InfluencePack: string | null;
+  InfluencePack: number | null;
   Language: string | null;
   MonsterPacks: string | null;
   _index: number | null;
@@ -491,8 +491,8 @@ export interface AtlasPositions {
 
 export interface AtlasPrimordialAltarChoices {
   Language: string | null;
-  Mod: string | null;
-  Type: string | null;
+  Mod: number | null;
+  Type: number | null;
   _index: number | null;
 }
 
@@ -508,19 +508,19 @@ export interface AtlasPrimordialAltarChoiceTypes {
 }
 
 export interface AtlasPrimordialBosses {
-  Altar: string | null;
-  AltarActivated: string | null;
-  BossInvitation: string | null;
+  Altar: number | null;
+  AltarActivated: number | null;
+  BossInvitation: number | null;
   Id: string | null;
-  InfluenceComplete: string | null;
+  InfluenceComplete: number | null;
   Language: string | null;
-  MiniBossInvitation: string | null;
-  Tag: string | null;
+  MiniBossInvitation: number | null;
+  Tag: number | null;
   _index: number | null;
 }
 
 export interface AtlasPrimordialBossInfluence {
-  Boss: string | null;
+  Boss: number | null;
   Language: string | null;
   MinMapTier: number | null;
   Progress: number | null;
@@ -529,8 +529,8 @@ export interface AtlasPrimordialBossInfluence {
 
 export interface AtlasPrimordialBossOptions {
   DefaultIcon: string | null;
-  Description: string | null;
-  DescriptionActive: string | null;
+  Description: number | null;
+  DescriptionActive: number | null;
   EmptyIcon: string | null;
   HighlightIcon: string | null;
   HoverIcon: string | null;
@@ -545,7 +545,7 @@ export interface AtlasUpgradesInventoryLayout {
   Id: string | null;
   Language: string | null;
   Objective: string | null;
-  Voidstone: string | null;
+  Voidstone: number | null;
   _index: number | null;
 }
 
@@ -581,15 +581,15 @@ export interface BaseItemTypes {
   InheritsFrom: string | null;
   IsCorrupted: string | null;
   ItemClassesKey: number | null;
-  ItemVisualIdentity: string | null;
+  ItemVisualIdentity: number | null;
   Language: string | null;
   ModDomain: string | null;
   Name: string | null;
   SiteVisibility: string | null;
   SizeOnGround: number | null;
-  SoundEffect: string | null;
+  SoundEffect: number | null;
   TagsKeys: string | null;
-  TradeMarketCategory: string | null;
+  TradeMarketCategory: number | null;
   VendorRecipe_AchievementItems: string | null;
   Width: number | null;
   _index: number | null;
@@ -660,7 +660,7 @@ export interface BestiaryNets {
 }
 
 export interface BestiaryRecipeComponent {
-  BeastRarity: string | null;
+  BeastRarity: number | null;
   BestiaryCapturableMonstersKey: number | null;
   BestiaryFamiliesKey: number | null;
   BestiaryGenusKey: number | null;
@@ -764,7 +764,7 @@ export interface BetrayalTargets {
   BetrayalRanksKey: number | null;
   FullName: string | null;
   Id: string | null;
-  ItemClasses: string | null;
+  ItemClasses: number | null;
   Language: string | null;
   Level3_AchievementItemsKey: number | null;
   MonsterVarietiesKey: number | null;
@@ -791,8 +791,8 @@ export interface BetrayalUpgrades {
   GrantedEffectsKey: number | null;
   Id: string | null;
   ItemClassesKey: number | null;
-  ItemVisualIdentityKey0: string | null;
-  ItemVisualIdentityKey1: string | null;
+  ItemVisualIdentityKey0: number | null;
+  ItemVisualIdentityKey1: number | null;
   Language: string | null;
   ModsKey: string | null;
   Name: string | null;
@@ -836,7 +836,7 @@ export interface BlightChestTypes {
 export interface BlightCraftingItems {
   Achievements: string | null;
   Language: string | null;
-  Oil: string | null;
+  Oil: number | null;
   Tier: number | null;
   UseType: number | null;
   _index: number | null;
@@ -887,7 +887,7 @@ export interface BlightEncounterTypes {
 }
 
 export interface BlightEncounterWaves {
-  EncounterType: string | null;
+  EncounterType: number | null;
   Language: string | null;
   MonsterSpawnerId: string | null;
   Wave: number | null;
@@ -939,7 +939,7 @@ export interface BlightTowers {
   Name: string | null;
   NextUpgradeOptions: string | null;
   Radius: number | null;
-  SpendResourceAchievement: string | null;
+  SpendResourceAchievement: number | null;
   StatsKey: number | null;
   StatsKeys: string | null;
   StatsKeys2: string | null;
@@ -969,18 +969,18 @@ export interface BreachBossLifeScalingPerLevel {
 }
 
 export interface BreachElement {
-  BaseBreachstone: string | null;
-  BossMapMod: string | null;
+  BaseBreachstone: number | null;
+  BossMapMod: number | null;
   Element: string | null;
   Language: string | null;
   _index: number | null;
 }
 
 export interface BreachstoneUpgrades {
-  BaseItemTypesKey0: string | null;
-  BaseItemTypesKey1: string | null;
-  BaseItemTypesKey2: string | null;
-  BaseItemTypesKey3: string | null;
+  BaseItemTypesKey0: number | null;
+  BaseItemTypesKey1: number | null;
+  BaseItemTypesKey2: number | null;
+  BaseItemTypesKey3: number | null;
   Language: string | null;
   _index: number | null;
 }
@@ -1015,7 +1015,7 @@ export interface BuffTemplates {
 export interface BuffVisualOrbArt {
   Id: string | null;
   Language: string | null;
-  MiscAnimated: string | null;
+  MiscAnimated: number | null;
   _index: number | null;
 }
 
@@ -1048,9 +1048,9 @@ export interface BuffVisuals {
   HasExtraArt: string | null;
   Id: string | null;
   Language: string | null;
-  MiscAnimated1: string | null;
-  MiscAnimated2: string | null;
-  MiscAnimated3: string | null;
+  MiscAnimated1: number | null;
+  MiscAnimated2: number | null;
+  MiscAnimated3: number | null;
   PreloadGroups: string | null;
   _index: number | null;
 }
@@ -1062,7 +1062,7 @@ export interface BuffVisualsArtVariations {
 }
 
 export interface BuffVisualSetEntries {
-  BuffVisual: string | null;
+  BuffVisual: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -1122,7 +1122,7 @@ export interface Characters {
   PlayerCritter: string | null;
   PlayerEffect: string | null;
   SkillTreeBackground: string | null;
-  StartSkillGem: string | null;
+  StartSkillGem: number | null;
   StartWeapons: string | null;
   TencentVideo: string | null;
   TraitDescription: string | null;
@@ -1244,9 +1244,9 @@ export interface ClientStrings {
 export interface CloneShot {
   Id: number | null;
   Language: string | null;
-  MiscAnimated1: string | null;
-  MiscAnimated2: string | null;
-  MiscAnimated3: string | null;
+  MiscAnimated1: number | null;
+  MiscAnimated2: number | null;
+  MiscAnimated3: number | null;
   MonsterVarietiesKey: number | null;
   _index: number | null;
 }
@@ -1298,8 +1298,8 @@ export interface CostTypes {
 }
 
 export interface CraftingBenchOptions {
-  AddEnchantment: string | null;
-  AddMod: string | null;
+  AddEnchantment: number | null;
+  AddMod: number | null;
   Cost_BaseItemTypes: string | null;
   Cost_Values: string | null;
   CraftingBenchCustomAction: string | null;
@@ -1318,9 +1318,9 @@ export interface CraftingBenchOptions {
   RequiredLevel: number | null;
   SocketColours: string | null;
   Sockets: number | null;
-  SortCategory: string | null;
+  SortCategory: number | null;
   Tier: number | null;
-  UnlockCategory: string | null;
+  UnlockCategory: number | null;
   UnveilsRequired: number | null;
   UnveilsRequired2: number | null;
   _index: number | null;
@@ -1330,7 +1330,7 @@ export interface CraftingBenchSortCategories {
   Id: string | null;
   IsVisible: string | null;
   Language: string | null;
-  Name: string | null;
+  Name: number | null;
   _index: number | null;
 }
 
@@ -1365,7 +1365,7 @@ export interface CurrencyItems {
   ModifyContractsAchievements: string | null;
   ModifyMapsAchievements: string | null;
   Possession_AchievementItemsKey: number | null;
-  ShopTag: string | null;
+  ShopTag: number | null;
   Stacks: number | null;
   Usage_AchievementItemsKeys: string | null;
   XBoxDirections: string | null;
@@ -1394,8 +1394,8 @@ export interface DamageHitEffects {
 
 export interface DamageParticleEffects {
   DamageParticleEffectTypes: string | null;
-  ImpactSoundData1: string | null;
-  ImpactSoundData2: string | null;
+  ImpactSoundData1: number | null;
+  ImpactSoundData2: number | null;
   Language: string | null;
   PETFile: string | null;
   Variation: number | null;
@@ -1431,7 +1431,7 @@ export interface DefaultMonsterStats {
 }
 
 export interface DeliriumStashTabLayout {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Height: number | null;
   Id: string | null;
   IntId: number | null;
@@ -1666,11 +1666,11 @@ export interface Doors {
 }
 
 export interface DroneBaseTypes {
-  BaseType: string | null;
+  BaseType: number | null;
   Language: string | null;
-  Type: string | null;
-  UseAchievement: string | null;
-  Visual: string | null;
+  Type: number | null;
+  UseAchievement: number | null;
+  Visual: number | null;
   _index: number | null;
 }
 
@@ -1680,7 +1680,7 @@ export interface DroneTypes {
   Language: string | null;
   NotPoweredText: string | null;
   SocketableText: string | null;
-  UnlockedStat: string | null;
+  UnlockedStat: number | null;
   _index: number | null;
 }
 
@@ -1760,7 +1760,7 @@ export interface Environments {
   EnvironmentTransitionsKey: number | null;
   Id: string | null;
   Language: string | null;
-  PreloadGroup: string | null;
+  PreloadGroup: number | null;
   _index: number | null;
 }
 
@@ -1864,13 +1864,13 @@ export interface ExpandingPulse {
 }
 
 export interface ExpeditionAreas {
-  Area: string | null;
+  Area: number | null;
   CompletionAchievements: string | null;
   Language: string | null;
   PosX: number | null;
   PosY: number | null;
   Tags: string | null;
-  TextAudio: string | null;
+  TextAudio: number | null;
   _index: number | null;
 }
 
@@ -1881,10 +1881,10 @@ export interface ExpeditionBalancePerLevel {
 }
 
 export interface ExpeditionCurrency {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Language: string | null;
-  LootSound: string | null;
-  NPC: string | null;
+  LootSound: number | null;
+  NPC: number | null;
   Tier: number | null;
   _index: number | null;
 }
@@ -1897,7 +1897,7 @@ export interface ExpeditionDeals {
   Function: string | null;
   Id: number | null;
   Language: string | null;
-  TextAudio: string | null;
+  TextAudio: number | null;
   _index: number | null;
 }
 
@@ -1906,12 +1906,12 @@ export interface ExpeditionFactions {
   FactionIcon: string | null;
   Id: string | null;
   Language: string | null;
-  MonsterVarieties: string | null;
+  MonsterVarieties: number | null;
   Name: string | null;
-  Progress1: string | null;
-  Progress2Vaal: string | null;
-  Progress3Final: string | null;
-  Tags: string | null;
+  Progress1: number | null;
+  Progress2Vaal: number | null;
+  Progress3Final: number | null;
+  Tags: number | null;
   _index: number | null;
 }
 
@@ -1923,18 +1923,18 @@ export interface ExpeditionMarkersCommon {
 }
 
 export interface ExpeditionNPCs {
-  AllBombsPlaced: string | null;
-  BombPlacedGeneric: string | null;
-  BombPlacedMonsters: string | null;
-  BombPlacedRemnant: string | null;
-  BombPlacedTreasure: string | null;
-  EncounterComplete: string | null;
-  Faction: string | null;
+  AllBombsPlaced: number | null;
+  BombPlacedGeneric: number | null;
+  BombPlacedMonsters: number | null;
+  BombPlacedRemnant: number | null;
+  BombPlacedTreasure: number | null;
+  EncounterComplete: number | null;
+  Faction: number | null;
   Id: string | null;
   Language: string | null;
   NPCs: string | null;
-  Reroll: string | null;
-  RerollItem: string | null;
+  Reroll: number | null;
+  RerollItem: number | null;
   _index: number | null;
 }
 
@@ -1942,14 +1942,14 @@ export interface ExpeditionRelicMods {
   Categories: string | null;
   DestroyAchievements: string | null;
   Language: string | null;
-  Mod: string | null;
+  Mod: number | null;
   _index: number | null;
 }
 
 export interface ExpeditionRelics {
   AOFile: string | null;
   Id: string | null;
-  ItemTag: string | null;
+  ItemTag: number | null;
   Language: string | null;
   MaxLevel: number | null;
   MinLevel: number | null;
@@ -1958,7 +1958,7 @@ export interface ExpeditionRelics {
 }
 
 export interface ExpeditionStorageLayout {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Height: number | null;
   Id: string | null;
   Language: string | null;
@@ -1969,10 +1969,10 @@ export interface ExpeditionStorageLayout {
 }
 
 export interface ExpeditionTerrainFeatures {
-  Area: string | null;
+  Area: number | null;
   ExpeditionAreas: string | null;
-  ExpeditionFaction: string | null;
-  ExtraFeature: string | null;
+  ExpeditionFaction: number | null;
+  ExtraFeature: number | null;
   Id: string | null;
   Language: string | null;
   MaxLevel: number | null;
@@ -1989,8 +1989,8 @@ export interface ExperienceLevels {
 }
 
 export interface ExplodingStormBuffs {
-  BuffDefinitionsKey1: string | null;
-  BuffDefinitionsKey2: string | null;
+  BuffDefinitionsKey1: number | null;
+  BuffDefinitionsKey2: number | null;
   BuffVisualsKey: number | null;
   Enemy_MonsterVarietiesKey: number | null;
   Friendly_MonsterVarietiesKey: number | null;
@@ -2097,10 +2097,10 @@ export interface GameStats {
 export interface GemTags {
   Id: string | null;
   Language: string | null;
-  Stat1: string | null;
-  Stat2: string | null;
-  Stat3: string | null;
-  Stat4: string | null;
+  Stat1: number | null;
+  Stat2: number | null;
+  Stat3: number | null;
+  Stat4: number | null;
   Tag: string | null;
   _index: number | null;
 }
@@ -2123,7 +2123,7 @@ export interface GenericLeagueRewardTypeVisuals {
   Icon: string | null;
   Language: string | null;
   Name: string | null;
-  Type: string | null;
+  Type: number | null;
   _index: number | null;
 }
 
@@ -2170,11 +2170,11 @@ export interface GrantedEffectQualityTypes {
 }
 
 export interface GrantedEffects {
-  ActiveSkill: string | null;
+  ActiveSkill: number | null;
   AddedActiveSkillTypes: string | null;
   AddedMinionActiveSkillTypes: string | null;
   AllowedActiveSkillTypes: string | null;
-  Animation: string | null;
+  Animation: number | null;
   Attribute: string | null;
   CannotBeSupported: string | null;
   CastTime: number | null;
@@ -2183,9 +2183,9 @@ export interface GrantedEffects {
   IgnoreMinionTypes: string | null;
   IsSupport: string | null;
   Language: string | null;
-  MultiPartAchievement: string | null;
-  RegularVariant: string | null;
-  StatSet: string | null;
+  MultiPartAchievement: number | null;
+  RegularVariant: number | null;
+  StatSet: number | null;
   SupportGemLetter: string | null;
   SupportWeaponRestrictions: string | null;
   SupportsGemsOnly: string | null;
@@ -2201,7 +2201,7 @@ export interface GrantedEffectsPerLevel {
   CostAmounts: string | null;
   CostMultiplier: number | null;
   CostTypes: string | null;
-  GrantedEffect: string | null;
+  GrantedEffect: number | null;
   Language: string | null;
   Level: number | null;
   LifeReservationFlat: number | null;
@@ -2244,7 +2244,7 @@ export interface GrantedEffectStatSetsPerLevel {
   PlayerLevelReq: number | null;
   SpellCritChance: number | null;
   StatInterpolations: string | null;
-  StatSet: string | null;
+  StatSet: number | null;
   _index: number | null;
 }
 
@@ -2312,8 +2312,8 @@ export interface HeistAreas {
   ClientStringsKey: number | null;
   Contract_BaseItemTypesKey: number | null;
   DGRFile: string | null;
-  EnvironmentsKey1: string | null;
-  EnvironmentsKey2: string | null;
+  EnvironmentsKey1: number | null;
+  EnvironmentsKey2: number | null;
   HeistJobsKeys: string | null;
   Id: string | null;
   Language: string | null;
@@ -2322,13 +2322,13 @@ export interface HeistAreas {
 }
 
 export interface HeistBalancePerLevel {
-  HeistValueScalingKey1: string | null;
-  HeistValueScalingKey2: string | null;
-  HeistValueScalingKey3: string | null;
-  HeistValueScalingKey4: string | null;
-  HeistValueScalingKey5: string | null;
-  HeistValueScalingKey6: string | null;
-  HeistValueScalingKey7: string | null;
+  HeistValueScalingKey1: number | null;
+  HeistValueScalingKey2: number | null;
+  HeistValueScalingKey3: number | null;
+  HeistValueScalingKey4: number | null;
+  HeistValueScalingKey5: number | null;
+  HeistValueScalingKey6: number | null;
+  HeistValueScalingKey7: number | null;
   Language: string | null;
   Level: number | null;
   _index: number | null;
@@ -2382,8 +2382,8 @@ export interface HeistDoodadNPCs {
 
 export interface HeistDoors {
   HeistAreasKey: number | null;
-  HeistJobsKey1: string | null;
-  HeistJobsKey2: string | null;
+  HeistJobsKey1: number | null;
+  HeistJobsKey2: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -2447,9 +2447,9 @@ export interface HeistLockType {
 }
 
 export interface HeistNPCAuras {
-  GrantedEffect: string | null;
+  GrantedEffect: number | null;
   Language: string | null;
-  Stat: string | null;
+  Stat: number | null;
   _index: number | null;
 }
 
@@ -2496,7 +2496,7 @@ export interface HeistNPCStats {
 }
 
 export interface HeistObjectives {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Language: string | null;
   Name: string | null;
   Scaling: string | null;
@@ -2519,19 +2519,19 @@ export interface HeistPatrolPacks {
 
 export interface HeistQuestContracts {
   BaseItemTypesKey: number | null;
-  HaveObjective: string | null;
-  HaveObjective2: string | null;
-  HaveQuest: string | null;
+  HaveObjective: number | null;
+  HaveObjective2: number | null;
+  HaveQuest: number | null;
   HeistContractsKey: number | null;
   HeistIntroAreasKey: number | null;
   HeistJobsKey: number | null;
   HeistNPCsKey: string | null;
   HeistObjectivesKey: number | null;
-  HeistRoomsKey1: string | null;
-  HeistRoomsKey2: string | null;
+  HeistRoomsKey1: number | null;
+  HeistRoomsKey2: number | null;
   Language: string | null;
   Objective: string | null;
-  QuestActive: string | null;
+  QuestActive: number | null;
   WorldAreasKey: number | null;
   _index: number | null;
 }
@@ -2547,20 +2547,20 @@ export interface HeistRevealingNPCs {
 export interface HeistRooms {
   ARMFile: string | null;
   HeistAreasKey: number | null;
-  HeistJobsKey1: string | null;
-  HeistJobsKey2: string | null;
+  HeistJobsKey1: number | null;
+  HeistJobsKey2: number | null;
   Id: number | null;
   Language: string | null;
   _index: number | null;
 }
 
 export interface HeistStorageLayout {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   ButtonFile: string | null;
   Columns: number | null;
   HeistJobsKey: number | null;
   Id: string | null;
-  ItemClass: string | null;
+  ItemClass: number | null;
   Language: string | null;
   Rows: number | null;
   _index: number | null;
@@ -2583,7 +2583,7 @@ export interface HellscapeAOReplacements {
 export interface HellscapeAreaPacks {
   Language: string | null;
   MonsterPacks: string | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
@@ -2595,7 +2595,7 @@ export interface HellscapeExperienceLevels {
 }
 
 export interface HellscapeFactions {
-  Boss: string | null;
+  Boss: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -2603,7 +2603,7 @@ export interface HellscapeFactions {
 
 export interface HellscapeImmuneMonsters {
   Language: string | null;
-  Monster: string | null;
+  Monster: number | null;
   _index: number | null;
 }
 
@@ -2628,33 +2628,33 @@ export interface HellscapeModificationInventoryLayout {
   Id: string | null;
   IsMapSlot: string | null;
   Language: string | null;
-  Quest: string | null;
+  Quest: number | null;
   Row: number | null;
-  Stat: string | null;
+  Stat: number | null;
   StatValue: number | null;
-  UnlockedWith: string | null;
+  UnlockedWith: number | null;
   Width: number | null;
   _index: number | null;
 }
 
 export interface HellscapeMods {
   Language: string | null;
-  Mod: string | null;
+  Mod: number | null;
   ModFamilies: string | null;
   TiersWhitelist: string | null;
-  TransformAchievement: string | null;
+  TransformAchievement: number | null;
   _index: number | null;
 }
 
 export interface HellscapeMonsterPacks {
-  Faction: string | null;
+  Faction: number | null;
   Id: string | null;
   IsDonutPack: string | null;
   IsElite: string | null;
   Language: string | null;
   MaxLevel: number | null;
   MinLevel: number | null;
-  MonsterPack: string | null;
+  MonsterPack: number | null;
   _index: number | null;
 }
 
@@ -2666,8 +2666,8 @@ export interface HellscapePassives {
   Language: string | null;
   Name: string | null;
   Points: number | null;
-  Quest: string | null;
-  SoundEffect: string | null;
+  Quest: number | null;
+  SoundEffect: number | null;
   Stats: string | null;
   StatsValues: string | null;
   _index: number | null;
@@ -2690,7 +2690,7 @@ export interface HideoutDoodadCategory {
 
 export interface HideoutDoodads {
   BaseItemTypesKey: number | null;
-  Category: string | null;
+  Category: number | null;
   InheritsFrom: string | null;
   IsCraftingBench: string | null;
   IsNonMasterDoodad: string | null;
@@ -2788,7 +2788,7 @@ export interface IncursionChests {
 
 export interface IncursionRoomBossFightEvents {
   Language: string | null;
-  Room: string | null;
+  Room: number | null;
   _index: number | null;
 }
 
@@ -2814,7 +2814,7 @@ export interface IncursionRooms {
 }
 
 export interface IncursionUniqueUpgradeComponents {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Language: string | null;
   _index: number | null;
 }
@@ -2823,7 +2823,7 @@ export interface IndexableSupportGems {
   Index: number | null;
   Language: string | null;
   Name: string | null;
-  SupportGem: string | null;
+  SupportGem: number | null;
   _index: number | null;
 }
 
@@ -2835,17 +2835,17 @@ export interface InfluenceExalts {
 }
 
 export interface InfluenceModUpgrades {
-  InfluenceMod: string | null;
+  InfluenceMod: number | null;
   Language: string | null;
-  UpgradedMod: string | null;
+  UpgradedMod: number | null;
   _index: number | null;
 }
 
 export interface InfluenceTags {
   Influence: string | null;
-  ItemClass: string | null;
+  ItemClass: number | null;
   Language: string | null;
-  Tag: string | null;
+  Tag: number | null;
   _index: number | null;
 }
 
@@ -2892,23 +2892,23 @@ export interface ItemClasses {
   CanHaveVeiledMods: string | null;
   CanScourge: string | null;
   CanTransferSkin: string | null;
-  EquipAchievements: string | null;
+  EquipAchievements: number | null;
   Flags: string | null;
   Id: string | null;
   IdentifyAchievements: string | null;
-  ItemClassCategory: string | null;
-  ItemStance: string | null;
+  ItemClassCategory: number | null;
+  ItemStance: number | null;
   Language: string | null;
   Name: string | null;
-  PickedUpQuest: string | null;
+  PickedUpQuest: number | null;
   RemovedIfLeavesArea: string | null;
-  TradeMarketCategory: string | null;
+  TradeMarketCategory: number | null;
   _index: number | null;
 }
 
 export interface ItemCostPerLevel {
   Contract_BaseItemTypesKey: number | null;
-  Cost: string | null;
+  Cost: number | null;
   Language: string | null;
   Level: number | null;
   _index: number | null;
@@ -2940,8 +2940,8 @@ export interface ItemisedVisualEffect {
   BaseItemTypesKey: number | null;
   ItemClasses: string | null;
   ItemVisualEffectKey: number | null;
-  ItemVisualIdentityKey1: string | null;
-  ItemVisualIdentityKey2: string | null;
+  ItemVisualIdentityKey1: number | null;
+  ItemVisualIdentityKey2: number | null;
   Language: string | null;
   Stats: string | null;
   _index: number | null;
@@ -2981,7 +2981,7 @@ export interface ItemVisualEffect {
 export interface ItemVisualHeldBodyModel {
   DuelistAnimatedObject: string | null;
   DuelistBone: string | null;
-  ItemVisualIdentity: string | null;
+  ItemVisualIdentity: number | null;
   Language: string | null;
   MarauderAnimatedObject: string | null;
   MarauderBone: string | null;
@@ -3010,7 +3010,7 @@ export interface ItemVisualIdentity {
   EPKFile: string | null;
   Id: string | null;
   Identify_AchievementItemsKeys: string | null;
-  InventorySoundEffect: string | null;
+  InventorySoundEffect: number | null;
   IsAlternateArt: string | null;
   IsAtlasOfWorldsMapIcon: string | null;
   IsTier16Icon: string | null;
@@ -3035,7 +3035,7 @@ export interface ItemVisualIdentity {
 export interface JobRaidBrackets {
   Language: string | null;
   MinLevel: number | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
@@ -3065,7 +3065,7 @@ export interface LabyrinthAreas {
 
 export interface LabyrinthBonusItems {
   AreaLevel: number | null;
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   LabyrinthName: string | null;
   Language: string | null;
   _index: number | null;
@@ -3103,13 +3103,13 @@ export interface LabyrinthRewardTypes {
 
 export interface Labyrinths {
   AreaLevel: number | null;
-  CraftingFontDescription: string | null;
-  JewelReward: string | null;
+  CraftingFontDescription: number | null;
+  JewelReward: number | null;
   Language: string | null;
   MinLevel: number | null;
   Name: string | null;
-  OfferingItem: string | null;
-  QuestFlag: string | null;
+  OfferingItem: number | null;
+  QuestFlag: number | null;
   RequiredTrials: string | null;
   Tier: number | null;
   _index: number | null;
@@ -3141,7 +3141,7 @@ export interface LabyrinthSecrets {
 }
 
 export interface LabyrinthSection {
-  ExclusionGroup: string | null;
+  ExclusionGroup: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -3152,8 +3152,8 @@ export interface LabyrinthSectionLayout {
   Float1: string | null;
   LabyrinthAreasKey: number | null;
   LabyrinthNodeOverridesKeys: string | null;
-  LabyrinthSecretsKey0: string | null;
-  LabyrinthSecretsKey1: string | null;
+  LabyrinthSecretsKey0: number | null;
+  LabyrinthSecretsKey1: number | null;
   LabyrinthSectionKey: number | null;
   LabyrinthSectionLayoutKeys: string | null;
   Language: string | null;
@@ -3163,7 +3163,7 @@ export interface LabyrinthSectionLayout {
 export interface LabyrinthTrials {
   Language: string | null;
   NPCTextAudioKey: number | null;
-  WorldAreas: string | null;
+  WorldAreas: number | null;
   _index: number | null;
 }
 
@@ -3199,7 +3199,7 @@ export interface LakeMetaOptionsUnlockText {
 export interface LakeRoomCompletion {
   Achievements: string | null;
   Language: string | null;
-  Room: string | null;
+  Room: number | null;
   _index: number | null;
 }
 
@@ -3217,9 +3217,9 @@ export interface LakeRooms {
   Script: string | null;
   Stats: string | null;
   StatsValues: string | null;
-  TextAudio: string | null;
+  TextAudio: number | null;
   Type: number | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
@@ -3249,9 +3249,9 @@ export interface LeagueInfo {
 
 export interface LeagueProgressQuestFlags {
   Boss: string | null;
-  CompletionString: string | null;
+  CompletionString: number | null;
   Language: string | null;
-  QuestFlag: string | null;
+  QuestFlag: number | null;
   _index: number | null;
 }
 
@@ -3285,11 +3285,11 @@ export interface LegionFactions {
   Id: string | null;
   Language: string | null;
   LegionBalancePerLevelKey: number | null;
-  MiscAnimatedKey1: string | null;
-  MiscAnimatedKey2: string | null;
-  MiscAnimatedKey3: string | null;
-  MiscAnimatedKey4: string | null;
-  MiscAnimatedKey5: string | null;
+  MiscAnimatedKey1: number | null;
+  MiscAnimatedKey2: number | null;
+  MiscAnimatedKey3: number | null;
+  MiscAnimatedKey4: number | null;
+  MiscAnimatedKey5: number | null;
   Shard: string | null;
   StatsKey: number | null;
   _index: number | null;
@@ -3308,7 +3308,7 @@ export interface LegionMonsterVarieties {
   LegionRanksKey: number | null;
   MiscAnimatedKey: string | null;
   MonsterVarietiesKey: number | null;
-  MonsterVarietiesKey2: string | null;
+  MonsterVarietiesKey2: number | null;
   _index: number | null;
 }
 
@@ -3353,8 +3353,8 @@ export interface MapCompletionAchievements {
 
 export interface MapConnections {
   Language: string | null;
-  MapPinsKey0: string | null;
-  MapPinsKey1: string | null;
+  MapPinsKey0: number | null;
+  MapPinsKey1: number | null;
   RestrictedAreaText: string | null;
   _index: number | null;
 }
@@ -3370,17 +3370,17 @@ export interface MapDeviceRecipes {
   AreaLevel: number | null;
   Id: string | null;
   Language: string | null;
-  MicrotransactionPortalVariation: string | null;
+  MicrotransactionPortalVariation: number | null;
   OpenAchievemnts: string | null;
   RecipeItems: string | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
 export interface MapDevices {
   Id: string | null;
   Language: string | null;
-  MiscObject: string | null;
+  MiscObject: number | null;
   _index: number | null;
 }
 
@@ -3414,20 +3414,20 @@ export interface MapPins {
 }
 
 export interface MapPurchaseCosts {
-  Cost: string | null;
+  Cost: number | null;
   Language: string | null;
   Tier: number | null;
   _index: number | null;
 }
 
 export interface Maps {
-  AchievementItem: string | null;
+  AchievementItem: number | null;
   BaseItemTypesKey: number | null;
   Language: string | null;
   MapSeriesKey: number | null;
   MapUpgrade_BaseItemTypesKey: number | null;
-  MapsKey2: string | null;
-  MapsKey3: string | null;
+  MapsKey2: number | null;
+  MapsKey3: number | null;
   MonsterPacksKeys: string | null;
   Regular_GuildCharacter: string | null;
   Regular_WorldAreasKey: number | null;
@@ -3481,15 +3481,15 @@ export interface MapStashSpecialTypeEntries {
   IsElderGuardian: string | null;
   IsShaperGuardian: string | null;
   Language: string | null;
-  MapItem: string | null;
+  MapItem: number | null;
   Name: string | null;
   _index: number | null;
 }
 
 export interface MapStashUniqueMapInfo {
-  BaseItem: string | null;
+  BaseItem: number | null;
   Language: string | null;
-  UniqueMap: string | null;
+  UniqueMap: number | null;
   _index: number | null;
 }
 
@@ -3521,18 +3521,18 @@ export interface MapTiers {
 export interface MavenDialog {
   Id: string | null;
   Language: string | null;
-  TextAudioT1: string | null;
-  TextAudioT2: string | null;
-  TextAudioT3: string | null;
-  TextAudioT4: string | null;
-  TextAudioT5: string | null;
-  TextAudioT6: string | null;
+  TextAudioT1: number | null;
+  TextAudioT2: number | null;
+  TextAudioT3: number | null;
+  TextAudioT4: number | null;
+  TextAudioT5: number | null;
+  TextAudioT6: number | null;
   _index: number | null;
 }
 
 export interface MavenFights {
   AreaLevel: number | null;
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   CompletionAchievements: string | null;
   Id: string | null;
   Language: string | null;
@@ -3543,22 +3543,22 @@ export interface MavenFights {
 }
 
 export interface MavenJewelRadiusKeystones {
-  Keystone: string | null;
+  Keystone: number | null;
   Language: string | null;
   _index: number | null;
 }
 
 export interface Melee {
-  ActiveSkill: string | null;
+  ActiveSkill: number | null;
   Language: string | null;
-  MeleeTrailsKey1: string | null;
-  MeleeTrailsKey2: string | null;
-  MeleeTrailsKey3: string | null;
-  MeleeTrailsKey4: string | null;
-  MeleeTrailsKey5: string | null;
-  MeleeTrailsKey6: string | null;
-  MeleeTrailsKey7: string | null;
-  MiscAnimated: string | null;
+  MeleeTrailsKey1: number | null;
+  MeleeTrailsKey2: number | null;
+  MeleeTrailsKey3: number | null;
+  MeleeTrailsKey4: number | null;
+  MeleeTrailsKey5: number | null;
+  MeleeTrailsKey6: number | null;
+  MeleeTrailsKey7: number | null;
+  MiscAnimated: number | null;
   SurgeEffect_EPKFile: string | null;
   _index: number | null;
 }
@@ -3586,16 +3586,16 @@ export interface MetamorphosisMetaMonsters {
 }
 
 export interface MetamorphosisMetaSkills {
-  Animation: string | null;
+  Animation: number | null;
   GrantedEffects: string | null;
   Language: string | null;
   MiscAnimations: string | null;
   Mods: string | null;
-  Monster: string | null;
+  Monster: number | null;
   Name: string | null;
   Script1: string | null;
   Script2: string | null;
-  SkillType: string | null;
+  SkillType: number | null;
   Stats: string | null;
   StatsValues: string | null;
   _index: number | null;
@@ -3608,7 +3608,7 @@ export interface MetamorphosisMetaSkillTypes {
   BodypartNamePlural: string | null;
   Description: string | null;
   Id: string | null;
-  ItemisedSample: string | null;
+  ItemisedSample: number | null;
   Language: string | null;
   Name: string | null;
   UnavailableArt: string | null;
@@ -3663,7 +3663,7 @@ export interface MicrotransactionCategory {
 }
 
 export interface MicrotransactionCharacterPortraitVariations {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Language: string | null;
   _index: number | null;
 }
@@ -3688,7 +3688,7 @@ export interface MicrotransactionPeriodicCharacterEffectVariations {
   AOFile: string | null;
   Id: string | null;
   Language: string | null;
-  MiscObject: string | null;
+  MiscObject: number | null;
   _index: number | null;
 }
 
@@ -3698,7 +3698,7 @@ export interface MicrotransactionPortalVariations {
   Id: number | null;
   Language: string | null;
   MapAOFile: string | null;
-  MiscObject: string | null;
+  MiscObject: number | null;
   PortalEffect: string | null;
   PortalEffectLarge: string | null;
   _index: number | null;
@@ -3712,7 +3712,7 @@ export interface MicrotransactionRarityDisplay {
 }
 
 export interface MicrotransactionRecycleSalvageValues {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Language: string | null;
   _index: number | null;
 }
@@ -3758,7 +3758,7 @@ export interface MiscAnimatedArtVariations {
 export interface MiscBeams {
   Id: string | null;
   Language: string | null;
-  MiscAnimated: string | null;
+  MiscAnimated: number | null;
   PreloadGroupsKeys: string | null;
   _index: number | null;
 }
@@ -3811,9 +3811,9 @@ export interface ModEffectStats {
 export interface ModEquivalencies {
   Id: string | null;
   Language: string | null;
-  ModsKey0: string | null;
-  ModsKey1: string | null;
-  ModsKey2: string | null;
+  ModsKey0: number | null;
+  ModsKey1: number | null;
+  ModsKey2: number | null;
   _index: number | null;
 }
 
@@ -3825,8 +3825,8 @@ export interface ModFamily {
 
 export interface Mods {
   AchievementItemsKey: string | null;
-  ArchnemesisMinionMod: string | null;
-  BuffTemplate: string | null;
+  ArchnemesisMinionMod: number | null;
+  BuffTemplate: number | null;
   ChestModType: string | null;
   CraftingItemClassRestrictions: string | null;
   Domain: string | null;
@@ -3840,8 +3840,8 @@ export interface Mods {
   HASH32: number | null;
   Heist_AddStatValue1: number | null;
   Heist_AddStatValue2: number | null;
-  Heist_StatsKey0: string | null;
-  Heist_StatsKey1: string | null;
+  Heist_StatsKey0: number | null;
+  Heist_StatsKey1: number | null;
   Heist_SubStatValue1: number | null;
   Heist_SubStatValue2: number | null;
   Id: string | null;
@@ -3871,12 +3871,12 @@ export interface Mods {
   Stat5Min: number | null;
   Stat6Max: number | null;
   Stat6Min: number | null;
-  StatsKey1: string | null;
-  StatsKey2: string | null;
-  StatsKey3: string | null;
-  StatsKey4: string | null;
-  StatsKey5: string | null;
-  StatsKey6: string | null;
+  StatsKey1: number | null;
+  StatsKey2: number | null;
+  StatsKey3: number | null;
+  StatsKey4: number | null;
+  StatsKey5: number | null;
+  StatsKey6: number | null;
   TagsKeys: string | null;
   _index: number | null;
 }
@@ -3946,18 +3946,18 @@ export interface MonsterGroupEntries {
 }
 
 export interface MonsterHeightBrackets {
-  BuffVisuals1: string | null;
-  BuffVisuals2: string | null;
+  BuffVisuals1: number | null;
+  BuffVisuals2: number | null;
   Id: string | null;
   Language: string | null;
-  Tag: string | null;
+  Tag: number | null;
   _index: number | null;
 }
 
 export interface MonsterHeights {
   Language: string | null;
-  MonsterHeightBracket: string | null;
-  MonsterVariety: string | null;
+  MonsterHeightBracket: number | null;
+  MonsterVariety: number | null;
   _index: number | null;
 }
 
@@ -3969,11 +3969,11 @@ export interface MonsterMapBossDifficulty {
   Stat3Value: number | null;
   Stat4Value: number | null;
   Stat5Value: number | null;
-  StatsKey1: string | null;
-  StatsKey2: string | null;
-  StatsKey3: string | null;
-  StatsKey4: string | null;
-  StatsKey5: string | null;
+  StatsKey1: number | null;
+  StatsKey2: number | null;
+  StatsKey3: number | null;
+  StatsKey4: number | null;
+  StatsKey5: number | null;
   _index: number | null;
 }
 
@@ -3984,10 +3984,10 @@ export interface MonsterMapDifficulty {
   Stat2Value: number | null;
   Stat3Value: number | null;
   Stat4Value: number | null;
-  StatsKey1: string | null;
-  StatsKey2: string | null;
-  StatsKey3: string | null;
-  StatsKey4: string | null;
+  StatsKey1: number | null;
+  StatsKey2: number | null;
+  StatsKey3: number | null;
+  StatsKey4: number | null;
   _index: number | null;
 }
 
@@ -4013,7 +4013,7 @@ export interface MonsterPacks {
   Language: string | null;
   MaxLevel: number | null;
   MinLevel: number | null;
-  PackFormation: string | null;
+  PackFormation: number | null;
   TagsKeys: string | null;
   WorldAreas2: string | null;
   WorldAreasKeys: string | null;
@@ -4023,15 +4023,15 @@ export interface MonsterPacks {
 export interface MonsterProjectileAttack {
   Id: number | null;
   Language: string | null;
-  Projectile: string | null;
+  Projectile: number | null;
   _index: number | null;
 }
 
 export interface MonsterProjectileSpell {
-  Animation: string | null;
+  Animation: number | null;
   Id: number | null;
   Language: string | null;
-  Projectile: string | null;
+  Projectile: number | null;
   _index: number | null;
 }
 
@@ -4162,8 +4162,8 @@ export interface MTXSetBonus {
 export interface MultiPartAchievementConditions {
   Id: string | null;
   Language: string | null;
-  MultiPartAchievementsKey1: string | null;
-  MultiPartAchievementsKey2: string | null;
+  MultiPartAchievementsKey1: number | null;
+  MultiPartAchievementsKey2: number | null;
   _index: number | null;
 }
 
@@ -4235,7 +4235,7 @@ export interface NPCAudio {
 }
 
 export interface NPCConversations {
-  DialogueEvent: string | null;
+  DialogueEvent: number | null;
   Id: string | null;
   Language: string | null;
   NPCTextAudioKeys: string | null;
@@ -4254,8 +4254,8 @@ export interface NPCDialogueStyles {
 
 export interface NPCFollowerVariations {
   Language: string | null;
-  MiscAnimatedKey0: string | null;
-  MiscAnimatedKey1: string | null;
+  MiscAnimatedKey0: number | null;
+  MiscAnimatedKey1: number | null;
   MonsterVarietiesKey: number | null;
   _index: number | null;
 }
@@ -4279,16 +4279,16 @@ export interface NPCPortraits {
 }
 
 export interface NPCs {
-  DialogueStyle: string | null;
+  DialogueStyle: number | null;
   Id: string | null;
   Language: string | null;
   Metadata: string | null;
   NPCAudios1: string | null;
   NPCAudios2: string | null;
   NPCMasterKey: number | null;
-  NPCShop: string | null;
+  NPCShop: number | null;
   Name: string | null;
-  Portrait: string | null;
+  Portrait: number | null;
   ShortName: string | null;
   _index: number | null;
 }
@@ -4321,7 +4321,7 @@ export interface NPCTextAudio {
 }
 
 export interface OnKillAchievements {
-  GameStat: string | null;
+  GameStat: number | null;
   Language: string | null;
   MonsterVarietiesKey: number | null;
   _index: number | null;
@@ -4334,12 +4334,12 @@ export interface PackFormation {
 }
 
 export interface PantheonSouls {
-  CapturedMonster: string | null;
-  CapturedVessel: string | null;
+  CapturedMonster: number | null;
+  CapturedVessel: number | null;
   Language: string | null;
-  PanelLayout: string | null;
-  QuestFlag: string | null;
-  WorldArea: string | null;
+  PanelLayout: number | null;
+  QuestFlag: number | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
@@ -4353,11 +4353,11 @@ export interface PassiveJewelRadii {
 }
 
 export interface PassiveJewelSlots {
-  ClusterJewelSize: string | null;
+  ClusterJewelSize: number | null;
   Language: string | null;
-  ProxySlot: string | null;
-  ReplacesSlot: string | null;
-  Slot: string | null;
+  ProxySlot: number | null;
+  ReplacesSlot: number | null;
+  Slot: number | null;
   StartIndices: string | null;
   _index: number | null;
 }
@@ -4377,7 +4377,7 @@ export interface PassiveSkillFilterOptions {
 }
 
 export interface PassiveSkillMasteryEffects {
-  AchievementItem: string | null;
+  AchievementItem: number | null;
   HASH16: number | null;
   Id: string | null;
   Language: string | null;
@@ -4394,18 +4394,18 @@ export interface PassiveSkillMasteryGroups {
   Id: string | null;
   InactiveIcon: string | null;
   Language: string | null;
-  MasteryCountStat: string | null;
+  MasteryCountStat: number | null;
   MasteryEffects: string | null;
-  SoundEffect: string | null;
+  SoundEffect: number | null;
   _index: number | null;
 }
 
 export interface PassiveSkills {
-  AchievementItem: string | null;
+  AchievementItem: number | null;
   AscendancyKey: number | null;
   Characters: string | null;
   FlavourText: string | null;
-  GrantedEffectsPerLevel: string | null;
+  GrantedEffectsPerLevel: number | null;
   Icon_DDSFile: string | null;
   Id: string | null;
   IsAnointmentOnly: string | null;
@@ -4419,14 +4419,14 @@ export interface PassiveSkills {
   IsNotable: string | null;
   IsProxyPassive: string | null;
   Language: string | null;
-  MasteryGroup: string | null;
+  MasteryGroup: number | null;
   Name: string | null;
   PassiveSkillBuffs: string | null;
   PassiveSkillGraphId: number | null;
   ReminderStrings: string | null;
   SkillPointsGranted: number | null;
   SkillType: string | null;
-  SoundEffect: string | null;
+  SoundEffect: number | null;
   Stat1Value: number | null;
   Stat2Value: number | null;
   Stat3Value: number | null;
@@ -4447,7 +4447,7 @@ export interface PassiveSkillTrees {
   Id: string | null;
   Language: string | null;
   PassiveSkillGraph: string | null;
-  UIArt: string | null;
+  UIArt: number | null;
   _index: number | null;
 }
 
@@ -4594,8 +4594,8 @@ export interface Quest {
   Language: string | null;
   Name: string | null;
   QuestId: number | null;
-  TrackerGroup: string | null;
-  Type: string | null;
+  TrackerGroup: number | null;
+  Type: number | null;
   _index: number | null;
 }
 
@@ -4616,7 +4616,7 @@ export interface QuestFlags {
 }
 
 export interface QuestItems {
-  Item: string | null;
+  Item: number | null;
   Language: string | null;
   Script: string | null;
   _index: number | null;
@@ -4626,17 +4626,17 @@ export interface QuestRewardOffers {
   Id: string | null;
   Language: string | null;
   QuestKey: number | null;
-  RewardWindowTake: string | null;
-  RewardWindowTitle: string | null;
+  RewardWindowTake: number | null;
+  RewardWindowTitle: number | null;
   _index: number | null;
 }
 
 export interface QuestRewards {
   Characters: string | null;
   Language: string | null;
-  Reward: string | null;
+  Reward: number | null;
   RewardLevel: number | null;
-  RewardOffer: string | null;
+  RewardOffer: number | null;
   RewardStack: number | null;
   _index: number | null;
 }
@@ -4649,7 +4649,7 @@ export interface QuestStates {
   Message: string | null;
   QuestKey: number | null;
   QuestStates: string | null;
-  SoundEffect: string | null;
+  SoundEffect: number | null;
   Text: string | null;
   _index: number | null;
 }
@@ -4667,7 +4667,7 @@ export interface QuestTrackerGroup {
   Id: string | null;
   Language: string | null;
   Name: string | null;
-  QuestType: string | null;
+  QuestType: number | null;
   _index: number | null;
 }
 
@@ -4725,7 +4725,7 @@ export interface RecipeUnlockDisplay {
   Language: string | null;
   Rank: number | null;
   RecipeId: number | null;
-  UnlockArea: string | null;
+  UnlockArea: number | null;
   UnlockDescription: string | null;
   _index: number | null;
 }
@@ -4761,8 +4761,8 @@ export interface RitualRuneTypes {
   Language: string | null;
   LevelMax: number | null;
   LevelMin: number | null;
-  MiscAnimatedKey1: string | null;
-  MiscAnimatedKey2: string | null;
+  MiscAnimatedKey1: number | null;
+  MiscAnimatedKey2: number | null;
   ModsKey: string | null;
   SpawnPatterns: string | null;
   SpawnWeight: number | null;
@@ -4771,7 +4771,7 @@ export interface RitualRuneTypes {
 }
 
 export interface RitualSetKillAchievements {
-  Achievement: string | null;
+  Achievement: number | null;
   KillBosses: string | null;
   Language: string | null;
   _index: number | null;
@@ -4825,7 +4825,7 @@ export interface SafehouseCraftingSpreeCurrencies {
 }
 
 export interface SalvageBoxes {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -4840,7 +4840,7 @@ export interface Scarabs {
 }
 
 export interface ScoutingReports {
-  BaseItemType: string | null;
+  BaseItemType: number | null;
   Id: string | null;
   Language: string | null;
   MinMapTier: number | null;
@@ -4848,14 +4848,14 @@ export interface ScoutingReports {
 }
 
 export interface SentinelCraftingCurrency {
-  Currency: string | null;
+  Currency: number | null;
   Language: string | null;
   Type: number | null;
   _index: number | null;
 }
 
 export interface SentinelDroneInventoryLayout {
-  DroneType: string | null;
+  DroneType: number | null;
   Language: string | null;
   _index: number | null;
 }
@@ -4870,14 +4870,14 @@ export interface SentinelPassives {
 export interface SentinelPassiveTypes {
   ActiveIcon: string | null;
   DefaultIcon: string | null;
-  DroneType: string | null;
+  DroneType: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
 }
 
 export interface SentinelStorageLayout {
-  DroneType: string | null;
+  DroneType: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -4885,20 +4885,20 @@ export interface SentinelStorageLayout {
 
 export interface SentinelTaggedMonsterStats {
   Language: string | null;
-  TaggedStat: string | null;
+  TaggedStat: number | null;
   _index: number | null;
 }
 
 export interface SessionQuestFlags {
   Language: string | null;
-  QuestFlag: string | null;
+  QuestFlag: number | null;
   _index: number | null;
 }
 
 export interface ShaperGuardians {
   Id: string | null;
   Language: string | null;
-  WorldArea: string | null;
+  WorldArea: number | null;
   _index: number | null;
 }
 
@@ -4910,7 +4910,7 @@ export interface ShieldTypes {
 }
 
 export interface ShopTag {
-  Category: string | null;
+  Category: number | null;
   Id: string | null;
   IsCategory: string | null;
   Language: string | null;
@@ -4922,13 +4922,13 @@ export interface ShopTag {
 export interface Shrines {
   AchievementItemsKeys: string | null;
   ChargesShared: string | null;
-  Description: string | null;
+  Description: number | null;
   Id: string | null;
   IsLesserShrine: string | null;
   IsPVPOnly: string | null;
   Language: string | null;
   Monster_ShrineBuffsKey: number | null;
-  Name: string | null;
+  Name: number | null;
   Player_ShrineBuffsKey: number | null;
   ShrineSoundsKey: number | null;
   SummonMonster_MonsterVarietiesKey: number | null;
@@ -4982,19 +4982,19 @@ export interface SkillGemInfo {
 }
 
 export interface SkillGems {
-  AwakenedVariant: string | null;
+  AwakenedVariant: number | null;
   BaseItemTypesKey: number | null;
   Consumed_ModsKey: number | null;
   Description: string | null;
   Dex: number | null;
   GemTagsKeys: string | null;
   GrantedEffectsKey: number | null;
-  GrantedEffectsKey2: string | null;
+  GrantedEffectsKey2: number | null;
   Int: number | null;
   IsVaalVariant: string | null;
   Language: string | null;
-  MinionGlobalSkillLevelStat: string | null;
-  RegularVariant: string | null;
+  MinionGlobalSkillLevelStat: number | null;
+  RegularVariant: number | null;
   Str: number | null;
   SupportSkillName: string | null;
   VaalVariant_BaseItemTypesKey: number | null;
@@ -5003,7 +5003,7 @@ export interface SkillGems {
 
 export interface SkillMineVariations {
   Language: string | null;
-  MiscObject: string | null;
+  MiscObject: number | null;
   SkillMinesKey: number | null;
   _index: number | null;
 }
@@ -5017,7 +5017,7 @@ export interface SkillMorphDisplay {
 export interface SkillSurgeEffects {
   GrantedEffectsKey: number | null;
   Language: string | null;
-  MiscAnimated: string | null;
+  MiscAnimated: number | null;
   _index: number | null;
 }
 
@@ -5033,7 +5033,7 @@ export interface SkillTrapVariations {
   Id: number | null;
   Language: string | null;
   Metadata: string | null;
-  MiscAnimated: string | null;
+  MiscAnimated: number | null;
   _index: number | null;
 }
 
@@ -5079,8 +5079,8 @@ export interface SpecialTiles {
 
 export interface SpectreOverrides {
   Language: string | null;
-  Monster: string | null;
-  Spectre: string | null;
+  Monster: number | null;
+  Spectre: number | null;
   _index: number | null;
 }
 
@@ -5118,7 +5118,7 @@ export interface StatDescriptionFunctions {
 
 export interface Stats {
   BelongsActiveSkillsKey: string | null;
-  Category: string | null;
+  Category: number | null;
   ContextFlags: string | null;
   HASH32: number | null;
   Id: string | null;
@@ -5139,7 +5139,7 @@ export interface Strongboxes {
   IsCartographerBox: string | null;
   Language: string | null;
   SpawnWeight: number | null;
-  SpawnWeightIncrease: string | null;
+  SpawnWeightIncrease: number | null;
   _index: number | null;
 }
 
@@ -5150,7 +5150,7 @@ export interface SuicideExplosion {
 }
 
 export interface SummonedSpecificBarrels {
-  Chest: string | null;
+  Chest: number | null;
   Id: string | null;
   Language: string | null;
   _index: number | null;
@@ -5215,19 +5215,19 @@ export interface SynthesisBrackets {
   Language: string | null;
   MaxLevel: number | null;
   MinLevel: number | null;
-  WorldAreasKey1: string | null;
-  WorldAreasKey2: string | null;
+  WorldAreasKey1: number | null;
+  WorldAreasKey2: number | null;
   _index: number | null;
 }
 
 export interface SynthesisFragmentDialogue {
   Language: string | null;
-  NPCTextAudioKey1: string | null;
-  NPCTextAudioKey2: string | null;
-  NPCTextAudioKey3: string | null;
-  NPCTextAudioKey4: string | null;
-  NPCTextAudioKey5: string | null;
-  NPCTextAudioKey6: string | null;
+  NPCTextAudioKey1: number | null;
+  NPCTextAudioKey2: number | null;
+  NPCTextAudioKey3: number | null;
+  NPCTextAudioKey4: number | null;
+  NPCTextAudioKey5: number | null;
+  NPCTextAudioKey6: number | null;
   _index: number | null;
 }
 
@@ -5360,7 +5360,7 @@ export interface TormentSpirits {
 }
 
 export interface TradeMarketCategory {
-  Group: string | null;
+  Group: number | null;
   Id: string | null;
   IsDisabled: string | null;
   Language: string | null;
@@ -5377,9 +5377,9 @@ export interface TradeMarketCategoryGroups {
 }
 
 export interface TradeMarketCategoryListAllClass {
-  ItemClass: string | null;
+  ItemClass: number | null;
   Language: string | null;
-  TradeCategory: string | null;
+  TradeCategory: number | null;
   _index: number | null;
 }
 
@@ -5390,7 +5390,7 @@ export interface TriggerSpawners {
 }
 
 export interface Tutorial {
-  ClientString: string | null;
+  ClientString: number | null;
   Id: string | null;
   IsEnabled: string | null;
   Language: string | null;
@@ -5401,7 +5401,7 @@ export interface Tutorial {
 export interface UITalkText {
   Id: string | null;
   Language: string | null;
-  NPCTextAudio: string | null;
+  NPCTextAudio: number | null;
   OGGFile: string | null;
   Text: string | null;
   UITalkCategoriesKey: string | null;
@@ -5416,13 +5416,13 @@ export interface UltimatumEncounters {
   Id: string | null;
   Language: string | null;
   ModTypes: string | null;
-  Type: string | null;
+  Type: number | null;
   _index: number | null;
 }
 
 export interface UltimatumEncounterTypes {
   Id: string | null;
-  InscribedAchievement: string | null;
+  InscribedAchievement: number | null;
   Language: string | null;
   Name: string | null;
   NormalAchievements: string | null;
@@ -5438,7 +5438,7 @@ export interface UltimatumItemisedRewards {
   RewardText: string | null;
   RewardType: number | null;
   SacrificeAmount: number | null;
-  SacrificeItem: string | null;
+  SacrificeItem: number | null;
   SacrificeText: string | null;
   TrialMods: string | null;
   _index: number | null;
@@ -5448,20 +5448,20 @@ export interface UltimatumModifiers {
   Achievements: string | null;
   Bosses: string | null;
   BuffTemplates: string | null;
-  DaemonSpawningData: string | null;
+  DaemonSpawningData: number | null;
   Description: string | null;
   ExtraMods: string | null;
   HASH16: number | null;
   Icon: string | null;
   Id: string | null;
   Language: string | null;
-  MiscAnimated: string | null;
+  MiscAnimated: number | null;
   MonsterSpawners: string | null;
   MonsterTypesApplyingRuin: number | null;
   Name: string | null;
   PreviousTiers: string | null;
   Radius: number | null;
-  TextAudio: string | null;
+  TextAudio: number | null;
   Tier: number | null;
   Types: string | null;
   TypesExtra: string | null;
@@ -5480,7 +5480,7 @@ export interface UltimatumTrialMasterAudio {
   Language: string | null;
   RoundsMax: number | null;
   RoundsMin: number | null;
-  TextAudio: string | null;
+  TextAudio: number | null;
   Variant: number | null;
   _index: number | null;
 }
@@ -5500,7 +5500,7 @@ export interface UniqueChests {
 }
 
 export interface UniqueJewelLimits {
-  JewelName: string | null;
+  JewelName: number | null;
   Language: string | null;
   Limit: number | null;
   _index: number | null;
@@ -5520,13 +5520,13 @@ export interface UniqueMaps {
 }
 
 export interface UniqueStashLayout {
-  BaseVersion: string | null;
+  BaseVersion: number | null;
   IsAlternateArt: string | null;
   ItemVisualIdentityKey: number | null;
   Language: string | null;
   OverrideHeight: number | null;
   OverrideWidth: number | null;
-  RenamedVersion: string | null;
+  RenamedVersion: number | null;
   ShowIfEmpty: string | null;
   UniqueStashTypesKey: number | null;
   WordsKey: number | null;
@@ -5613,7 +5613,7 @@ export interface WarbandsPackNumbers {
 }
 
 export interface WeaponClasses {
-  ItemClass: string | null;
+  ItemClass: number | null;
   Language: string | null;
   _index: number | null;
 }

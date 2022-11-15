@@ -47,7 +47,7 @@ async function generateTsInterface(debug: Debug.Debugger, dbPath: string) {
  */
 class DbBuilder {
   private readonly _dbPath: string;
-  private readonly _db: Kysely<unknown>;
+  private _db: Kysely<unknown>;
   private readonly _debug: Debug.Debugger;
   private _errors: Record<string, { error: unknown }> = {};
   private _schema: Readonly<SchemaFile>;
@@ -55,12 +55,6 @@ class DbBuilder {
   constructor() {
     this._dbPath = pathUtils.defaultDbPath();
     this._debug = Debug(`exile-db:`).extend(this.constructor.name);
-
-    this._db = new Kysely<unknown>({
-      dialect: new SqliteDialect({
-        database: new Database(this._dbPath),
-      }),
-    });
   }
 
   public get DbPath(): string {
@@ -68,6 +62,17 @@ class DbBuilder {
   }
 
   public async buildDatabase() {
+    if (fs.existsSync(this._dbPath)) {
+      this._debug(`Removing existing database at %s`, this._dbPath);
+      fs.rmSync(this._dbPath);
+    }
+
+    this._db = new Kysely<unknown>({
+      dialect: new SqliteDialect({
+        database: new Database(this._dbPath),
+      }),
+    });
+
     this._debug("Building database at %s", this._dbPath);
 
     this._schema = await this._loadSchema();
@@ -166,15 +171,33 @@ class DbBuilder {
     if (column.type == "i32") return "integer";
     if (column.type == "f32") return "decimal";
     if (column.type == "enumrow") return "text";
-    if (column.type == "foreignrow") {
-      if (column.name?.endsWith("Key")) return "integer";
-      else return "text";
-    }
-    if (column.type == "row") {
-      if (column.name?.endsWith("Key")) return "integer";
-      else return "text";
-    }
+    if (column.type == "foreignrow") return "integer";
+    if (column.type == "row") return "integer";
   }
+
+  // private _checkRowType(
+  //   column: Readonly<TableColumn>,
+  //   table: Readonly<SchemaTable>
+  // ): "integer" | "text" {
+  //   let foreignTable: Readonly<SchemaTable> | undefined;
+  //   if (column.type == "row") foreignTable = table;
+  //   else {
+  //     if (!column.references?.table) return "integer";
+  //     foreignTable = this._schema.tables.find(
+  //       (t) => t.name == column.references?.table
+  //     );
+  //     if (!foreignTable) {
+  //       this._debug(
+  //         `Foreign table %s not found referenced by column %s`,
+  //         column.references?.table,
+  //         column.name
+  //       );
+  //       return "integer";
+  //     }
+  //   }
+
+  //   const columnName = //
+  // }
 }
 
 /**
@@ -183,7 +206,7 @@ class DbBuilder {
  */
 class TableTester extends PoEDB {
   constructor(dbPath: string) {
-    super(dbPath, undefined, 1000 * 60 * 5);
+    super(dbPath, "./.cache", 1000 * 60 * 5);
   }
 
   private _errors: Record<string, { error: unknown }> = {};
