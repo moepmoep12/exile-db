@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/moepmoep12/exile-db/compare/v3.0.0...v3.1.0) (2022-11-20)
+
+
+### Features
+
+* add Getter & resolve paths ([15f1673](https://github.com/moepmoep12/exile-db/commit/15f167337f6b00d45bfd727b22d2665dfac41f23))
+
 # [3.0.0](https://github.com/moepmoep12/exile-db/compare/v2.0.0...v3.0.0) (2022-11-15)
 
 
