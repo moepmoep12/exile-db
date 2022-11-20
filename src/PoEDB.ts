@@ -2,6 +2,7 @@ import { Kysely, SqliteDialect } from "kysely";
 import { Exporter, Loaders } from "poe-dat-export";
 import Database from "better-sqlite3";
 import Debug from "debug";
+import path from "path";
 
 import * as pathUtils from "./utils/paths";
 import { Language, Schema } from "./models";
@@ -11,14 +12,22 @@ export class PoEDB extends Kysely<Schema.DB> {
   protected readonly _debug: Debug.Debugger;
   protected readonly _exporter: Exporter.DatExporter;
   protected readonly _sqliteDb: Database.Database;
+  protected readonly _dbPath: string;
+  protected readonly _cacheDir: string | undefined;
+  protected readonly _cacheDuration: number | undefined;
 
   /**
-   * @param dbPath The location of the sqlite db
-   * @param cacheDir The directory used for caching
+   * @param dbPath The location of the sqlite db. If the path is relative,
+   * it will be resolved using the cwd
+   *
+   * @param cacheDir The directory used for caching. If the path is relative,
+   * it will be resolved using the cwd. If not specified, the default will be used
    */
   constructor(dbPath?: string, cacheDir?: string, cacheDuration?: number) {
-    const path = dbPath || pathUtils.defaultDbPath();
-    const db = new Database(path);
+    let _dbPath = dbPath || pathUtils.defaultDbPath();
+    if (!path.isAbsolute(_dbPath)) _dbPath = path.resolve(_dbPath);
+
+    const db = new Database(_dbPath);
     super({
       dialect: new SqliteDialect({
         database: db,
@@ -26,20 +35,47 @@ export class PoEDB extends Kysely<Schema.DB> {
     });
 
     this._sqliteDb = db;
+    this._dbPath = _dbPath;
+    this._cacheDir = cacheDir;
+    this._cacheDuration = cacheDuration;
+
+    if (this._cacheDir && !path.isAbsolute(this._cacheDir))
+      this._cacheDir = path.resolve(this._cacheDir);
 
     this._debug = Debug(`exile-db:`).extend(this.constructor.name);
 
-    this._debug(`Loaded DB from %s`, path);
+    this._debug(`Loaded DB from %s`, this.DbPath);
 
     const bundlerOptions: Loaders.OnlineBundleLoaderOptions = {
       cacheFile: true,
     };
-    if (cacheDir) bundlerOptions.cacheDir = cacheDir;
-    if (cacheDuration) bundlerOptions.cacheDuration = cacheDuration;
+    if (this.CacheDir) bundlerOptions.cacheDir = this.CacheDir;
+    if (this.CacheDuration) bundlerOptions.cacheDuration = this.CacheDuration;
 
     this._exporter = new Exporter.DatExporter({
       bundleLoader: new Loaders.OnlineBundleLoader(bundlerOptions),
     });
+  }
+
+  /**
+   * The path to the sqlite database
+   */
+  public get DbPath(): string {
+    return this._dbPath;
+  }
+
+  /**
+   * The absolute path to the cache directory
+   */
+  public get CacheDir(): string | undefined {
+    return this._cacheDir;
+  }
+
+  /**
+   * The time in ms items stay in cache
+   */
+  public get CacheDuration(): number | undefined {
+    return this._cacheDuration;
   }
 
   /**
