@@ -22,7 +22,7 @@ interface Arguments {
    * If the database is not at the specified path,
    * it will be copied from the default path in the node_modules.
    */
-  database?: string;
+  database: string;
 
   /**
    * The directory for caching
@@ -43,19 +43,29 @@ interface Arguments {
    * Whether duplicate key errors are ignored on insertion. Default: true
    */
   silent?: boolean;
+
+  /**
+   * Whether to remove unused tables, that is, all tables not in `tables`.
+   * Default: false
+   */
+  removeUnusedTables?: boolean;
 }
 
 Debug.enable("exile-db:*");
 const debug = Debug(`exile-db:`).extend("CLI");
 
-async function loadTables(config: Arguments) {
+/**
+ * Loads a database with the given config & tables
+ *
+ * @param config The config to use
+ */
+export async function loadTables(config: Arguments) {
   if (!config.tables || config.tables.length == 0) {
     throw new Error(`No tables specified!`);
   }
 
   let dbPath = config.database;
   if (dbPath && !path.isAbsolute(dbPath)) dbPath = path.resolve(dbPath);
-  if (!dbPath) dbPath = defaultDbPath();
 
   if (dbPath && !fs.existsSync(dbPath)) {
     debug(`DB not found at specified location. Copying database to %s`, dbPath);
@@ -80,9 +90,20 @@ async function loadTables(config: Arguments) {
   }
 
   debug(`Successfully loaded tables into db at %s`, dbPath);
+
+  if (config.removeUnusedTables) {
+    debug(`Removing unused tables`);
+
+    const tables = await poedb.introspection.getTables();
+    for (const table of tables) {
+      if (config.tables.includes(table.name as keyof Schema.DB)) continue;
+
+      await poedb.schema.dropTable(table.name).execute();
+    }
+  }
 }
 
-async function clearDb(dbPath: string) {
+export async function clearDb(dbPath: string) {
   debug(`Clearing database at %s`, dbPath);
   const poedb = new PoEDB(dbPath);
   const tables = await poedb.introspection.getTables();
@@ -92,7 +113,7 @@ async function clearDb(dbPath: string) {
   debug(`Successfully cleared database at %s`, dbPath);
 }
 
-async function main() {
+export async function main() {
   try {
     const parser = yargs(hideBin(process.argv))
       .command(
@@ -141,6 +162,13 @@ async function main() {
                 description:
                   "Whether duplicate key errors are ignored on insertion.",
                 default: true,
+              },
+              removeUnusedTables: {
+                type: "boolean",
+                alias: "r",
+                description:
+                  "Whether to remove unused tables, that is, all tables not in `tables`",
+                default: false,
               },
             })
             .check((a) => {

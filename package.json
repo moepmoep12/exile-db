@@ -57,6 +57,7 @@
           "message": "Release <%= nextRelease.version %> [skip ci]",
           "assets": [
             "package.json",
+            "package-lock.json",
             "CHANGELOG.md"
           ]
         }
@@ -99,7 +100,7 @@
     "better-sqlite3": "^7.6.2",
     "debug": "^4.3.4",
     "kysely": "^0.22.0",
-    "poe-dat-export": "^1.0.1",
+    "poe-dat-export": "^2.0.0",
     "yargs": "^17.6.2"
   }
 }

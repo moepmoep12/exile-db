@@ -53,6 +53,7 @@ class DbBuilder {
   private _schema: Readonly<SchemaFile>;
 
   constructor() {
+    Debug.enable(`exile-db:*`);
     this._dbPath = pathUtils.defaultDbPath();
     this._debug = Debug(`exile-db:`).extend(this.constructor.name);
   }
@@ -174,30 +175,6 @@ class DbBuilder {
     if (column.type == "foreignrow") return "integer";
     if (column.type == "row") return "integer";
   }
-
-  // private _checkRowType(
-  //   column: Readonly<TableColumn>,
-  //   table: Readonly<SchemaTable>
-  // ): "integer" | "text" {
-  //   let foreignTable: Readonly<SchemaTable> | undefined;
-  //   if (column.type == "row") foreignTable = table;
-  //   else {
-  //     if (!column.references?.table) return "integer";
-  //     foreignTable = this._schema.tables.find(
-  //       (t) => t.name == column.references?.table
-  //     );
-  //     if (!foreignTable) {
-  //       this._debug(
-  //         `Foreign table %s not found referenced by column %s`,
-  //         column.references?.table,
-  //         column.name
-  //       );
-  //       return "integer";
-  //     }
-  //   }
-
-  //   const columnName = //
-  // }
 }
 
 /**
