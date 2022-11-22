@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/moepmoep12/exile-db/compare/v3.1.0...v4.0.0) (2022-11-22)
+
+
+### Features
+
+* Add CLI option removeUnusedTables ([e7437c2](https://github.com/moepmoep12/exile-db/commit/e7437c2e5f847dfd57abb4f8e5767d9d1c38d614))
+
+
+### BREAKING CHANGES
+
+* Columns with null foreign keys are now properly loaded using null and not 0xfefefefefefefefe.
+
 # [3.1.0](https://github.com/moepmoep12/exile-db/compare/v3.0.0...v3.1.0) (2022-11-20)
 
 
