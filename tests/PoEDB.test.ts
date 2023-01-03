@@ -43,6 +43,6 @@ describe(`PoEDB`, function () {
     expect(result.length).to.be.greaterThan(0);
 
     const item = result[0];
-    expect(item.Name).to.be.equal("Weeping Essence of Hatred");
+    expect(item.Name).to.be.equal("Muttering Essence of Hatred");
   });
 });

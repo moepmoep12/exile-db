@@ -2,6 +2,9 @@
   "AlternateQualityCurrencyDecayFactors": {
     "error": "Failed to find sequence for path Data/AlternateQualityCurrencyDecayFactors.dat64"
   },
+  "ArchnemesisMods": {
+    "error": "Invalid array length"
+  },
   "AtlasAwakeningStats": {
     "error": "Failed to find sequence for path Data/AtlasAwakeningStats.dat64"
   },
@@ -71,6 +74,9 @@
   "ItemThemes": {
     "error": "Failed to find sequence for path Data/ItemThemes.dat64"
   },
+  "LegionChests": {
+    "error": "Failed to find sequence for path Data/LegionChests.dat64"
+  },
   "MasterHideoutLevels": {
     "error": "Failed to find sequence for path Data/MasterHideoutLevels.dat64"
   },
@@ -109,6 +115,9 @@
   },
   "ProphecyType": {
     "error": "Failed to find sequence for path Data/ProphecyType.dat64"
+  },
+  "SafehouseCraftingSpree": {
+    "error": "Failed to find sequence for path Data/SafehouseCraftingSpree.dat64"
   },
   "ShopCategory": {
     "error": "Failed to find sequence for path Data/ShopCategory.dat64"

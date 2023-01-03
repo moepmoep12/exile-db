@@ -321,15 +321,6 @@ export interface ArchnemesisModComboAchievements {
   _index: number | null;
 }
 
-export interface ArchnemesisMods {
-  Language: string | null;
-  Mod: number | null;
-  Name: string | null;
-  TextStyles: string | null;
-  Visual: number | null;
-  _index: number | null;
-}
-
 export interface ArchnemesisModVisuals {
   Id: string | null;
   Language: string | null;
@@ -1289,6 +1280,12 @@ export interface ComponentCharges {
   _index: number | null;
 }
 
+export interface CoreLeagues {
+  Id: string | null;
+  Language: string | null;
+  _index: number | null;
+}
+
 export interface CostTypes {
   FormatText: string | null;
   Id: string | null;
@@ -1695,6 +1692,7 @@ export interface DropPool {
   Group: string | null;
   Language: string | null;
   Weight: number | null;
+  WeightHardmode: number | null;
   _index: number | null;
 }
 
@@ -2724,6 +2722,7 @@ export interface HideoutRarity {
 }
 
 export interface Hideouts {
+  HASH16: number | null;
   HideoutFile: string | null;
   HideoutImage: string | null;
   Id: string | null;
@@ -2886,19 +2885,23 @@ export interface ItemClasses {
   AlwaysShow: string | null;
   CanBeCorrupted: string | null;
   CanBeDoubleCorrupted: string | null;
+  CanBeFractured: string | null;
   CanHaveAspects: string | null;
   CanHaveIncubators: string | null;
   CanHaveInfluence: string | null;
   CanHaveVeiledMods: string | null;
   CanScourge: string | null;
   CanTransferSkin: string | null;
+  CanUpgradeRarity: string | null;
   EquipAchievements: number | null;
   Flags: string | null;
   Id: string | null;
   IdentifyAchievements: string | null;
+  IsUnmodifiable: string | null;
   ItemClassCategory: number | null;
   ItemStance: number | null;
   Language: string | null;
+  MaxInventoryDimensions: string | null;
   Name: string | null;
   PickedUpQuest: number | null;
   RemovedIfLeavesArea: string | null;
@@ -2909,6 +2912,7 @@ export interface ItemClasses {
 export interface ItemCostPerLevel {
   Contract_BaseItemTypesKey: number | null;
   Cost: number | null;
+  CostHardmode: number | null;
   Language: string | null;
   Level: number | null;
   _index: number | null;
@@ -3228,6 +3232,7 @@ export interface LeagueFlag {
   Id: string | null;
   Image: string | null;
   IsHC: string | null;
+  IsRuthless: string | null;
   IsSSF: string | null;
   Language: string | null;
   _index: number | null;
@@ -3266,15 +3271,6 @@ export interface LegionChestCounts {
   LegionFactionsKey: number | null;
   LegionRanksKey: number | null;
   MinLevel: number | null;
-  _index: number | null;
-}
-
-export interface LegionChests {
-  ChestsKey: number | null;
-  Language: string | null;
-  LegionFactionsKey: number | null;
-  LegionRanksKey: number | null;
-  MonsterVarietiesKey: number | null;
   _index: number | null;
 }
 
@@ -3743,6 +3739,7 @@ export interface MinimapIcons {
 
 export interface MiscAnimated {
   AOFile: string | null;
+  HASH32: number | null;
   Id: string | null;
   Language: string | null;
   PreloadGroupsKeys: string | null;
@@ -4176,6 +4173,7 @@ export interface MultiPartAchievements {
 
 export interface Music {
   BankFile: string | null;
+  HASH16: number | null;
   Id: string | null;
   IsAvailableInHideout: string | null;
   Language: string | null;
@@ -4738,6 +4736,14 @@ export interface RecipeUnlockObjects {
   _index: number | null;
 }
 
+export interface ReminderText {
+  Id: string | null;
+  Language: string | null;
+  Text: string | null;
+  TextHardmode: string | null;
+  _index: number | null;
+}
+
 export interface RitualBalancePerLevel {
   Language: string | null;
   MinLevel: number | null;
@@ -4803,16 +4809,6 @@ export interface SafehouseBYOCrafting {
   Language: string | null;
   Rank: number | null;
   ServerCommand: string | null;
-  _index: number | null;
-}
-
-export interface SafehouseCraftingSpree {
-  BetrayalJobsKey: number | null;
-  Chance: number | null;
-  CurrencyCount: string | null;
-  Currency_SafehouseCraftingSpreeCurrenciesKeys: string | null;
-  Language: string | null;
-  Rank: number | null;
   _index: number | null;
 }
 
@@ -4988,9 +4984,11 @@ export interface SkillGems {
   Description: string | null;
   Dex: number | null;
   GemTagsKeys: string | null;
+  GrantedEffectHardMode: number | null;
   GrantedEffectsKey: number | null;
   GrantedEffectsKey2: number | null;
   Int: number | null;
+  IsSupport: string | null;
   IsVaalVariant: string | null;
   Language: string | null;
   MinionGlobalSkillLevelStat: number | null;
@@ -5668,7 +5666,7 @@ export interface WorldAreas {
   AchievementItemsKey: number | null;
   Act: number | null;
   AreaLevel: number | null;
-  AreaType_TagsKeys: string | null;
+  AreaTypeTags: string | null;
   Bosses_MonsterVarietiesKeys: string | null;
   Connections_WorldAreasKeys: string | null;
   Enter_AchievementItemsKey: number | null;
@@ -5699,11 +5697,10 @@ export interface WorldAreas {
   SpawnWeight_TagsKeys: string | null;
   SpawnWeight_Values: string | null;
   TSIFile: string | null;
-  TagsKeys: string | null;
+  Tags: string | null;
   TopologiesKeys: string | null;
   TwinnedFullClear_AchievementItemsKey: number | null;
-  VaalArea_SpawnChance: number | null;
-  VaalArea_WorldAreasKeys: string | null;
+  VaalArea: string | null;
   WaypointActivation_AchievementItemsKeys: string | null;
   _index: number | null;
 }
@@ -5749,7 +5746,6 @@ export interface DB {
   ArchitectLifeScalingPerLevel: ArchitectLifeScalingPerLevel;
   ArchnemesisMetaRewards: ArchnemesisMetaRewards;
   ArchnemesisModComboAchievements: ArchnemesisModComboAchievements;
-  ArchnemesisMods: ArchnemesisMods;
   ArchnemesisModVisuals: ArchnemesisModVisuals;
   ArchnemesisRecipes: ArchnemesisRecipes;
   AreaInfluenceDoodads: AreaInfluenceDoodads;
@@ -5849,6 +5845,7 @@ export interface DB {
   Commands: Commands;
   ComponentAttributeRequirements: ComponentAttributeRequirements;
   ComponentCharges: ComponentCharges;
+  CoreLeagues: CoreLeagues;
   CostTypes: CostTypes;
   CraftingBenchOptions: CraftingBenchOptions;
   CraftingBenchSortCategories: CraftingBenchSortCategories;
@@ -6045,7 +6042,6 @@ export interface DB {
   LeagueProgressQuestFlags: LeagueProgressQuestFlags;
   LegionBalancePerLevel: LegionBalancePerLevel;
   LegionChestCounts: LegionChestCounts;
-  LegionChests: LegionChests;
   LegionFactions: LegionFactions;
   LegionMonsterCounts: LegionMonsterCounts;
   LegionMonsterVarieties: LegionMonsterVarieties;
@@ -6195,6 +6191,7 @@ export interface DB {
   Realms: Realms;
   RecipeUnlockDisplay: RecipeUnlockDisplay;
   RecipeUnlockObjects: RecipeUnlockObjects;
+  ReminderText: ReminderText;
   RitualBalancePerLevel: RitualBalancePerLevel;
   RitualConstants: RitualConstants;
   RitualRuneTypes: RitualRuneTypes;
@@ -6203,7 +6200,6 @@ export interface DB {
   RogueExiles: RogueExiles;
   Rulesets: Rulesets;
   SafehouseBYOCrafting: SafehouseBYOCrafting;
-  SafehouseCraftingSpree: SafehouseCraftingSpree;
   SafehouseCraftingSpreeCurrencies: SafehouseCraftingSpreeCurrencies;
   SalvageBoxes: SalvageBoxes;
   Scarabs: Scarabs;
