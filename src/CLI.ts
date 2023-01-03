@@ -12,9 +12,10 @@ import { Language, Schema } from "./models";
 
 interface Arguments {
   /**
-   * The names of the tables to load
+   * The names of the tables to load.
+   * Use `*` to load all available tables.
    */
-  tables: Array<keyof Schema.DB>;
+  tables: Array<keyof Schema.DB> | "*";
 
   /**
    * The path to the database.
@@ -85,7 +86,14 @@ export async function loadTables(config: Arguments) {
     }
   }
 
-  for (const table of config.tables || []) {
+  const tablesToLoad =
+    config.tables == "*"
+      ? ((await poedb.introspection.getTables()).map(
+          (t) => t.name
+        ) as (keyof Schema.DB)[])
+      : config.tables;
+
+  for (const table of tablesToLoad) {
     await poedb.tryLoadTable(table, config.languages, config.silent);
   }
 
