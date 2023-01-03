@@ -1,3 +1,14 @@
+# [5.0.0](https://github.com/moepmoep12/exile-db/compare/v4.0.0...v5.0.0) (2023-01-03)
+
+
+* Add option to load all tables to CLI ([7d2b97d](https://github.com/moepmoep12/exile-db/commit/7d2b97dae6e18b105aa6f9d69fb895efb079653e)), closes [#1](https://github.com/moepmoep12/exile-db/issues/1) [#2](https://github.com/moepmoep12/exile-db/issues/2)
+
+
+### BREAKING CHANGES
+
+* - schema changed due to latest patch 3.20
+- The option `tables` of the load command can now be set to `*` to load all tables of the database
+
 # [4.0.0](https://github.com/moepmoep12/exile-db/compare/v3.1.0...v4.0.0) (2022-11-22)
 
 
