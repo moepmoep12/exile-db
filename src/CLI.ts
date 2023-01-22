@@ -87,7 +87,7 @@ export async function loadTables(config: Arguments) {
   }
 
   const tablesToLoad =
-    config.tables == "*"
+    config.tables == "*" || config.tables.some((t) => (t as unknown) == "*")
       ? ((await poedb.introspection.getTables()).map(
           (t) => t.name
         ) as (keyof Schema.DB)[])
