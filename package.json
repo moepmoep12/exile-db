@@ -1,6 +1,6 @@
 {
   "name": "exile-db",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "SQLite database containing static resources of the game Path of Exile (PoE)",
   "scripts": {
     "build": "tsc && ncp ./poedb.db dist/poedb.db",

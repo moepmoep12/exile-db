@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/moepmoep12/exile-db/compare/v5.0.0...v5.0.1) (2023-01-22)
+
+
+### Bug Fixes
+
+* update schema ([83a42eb](https://github.com/moepmoep12/exile-db/commit/83a42eb7048b3ebba79b3d9f471d5b487b205d0e))
+
 # [5.0.0](https://github.com/moepmoep12/exile-db/compare/v4.0.0...v5.0.0) (2023-01-03)
 
 
