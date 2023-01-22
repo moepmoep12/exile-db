@@ -4331,6 +4331,35 @@ export interface PackFormation {
   _index: number | null;
 }
 
+export interface PantheonPanelLayout {
+  AchievementItems: string | null;
+  CoverImage: string | null;
+  Effect1_StatsKeys: string | null;
+  Effect1_Values: string | null;
+  Effect2_StatsKeys: string | null;
+  Effect2_Values: string | null;
+  Effect3_StatsKeys: string | null;
+  Effect3_Values: string | null;
+  Effect4_StatsKeys: string | null;
+  Effect4_Values: string | null;
+  GodName1: string | null;
+  GodName2: string | null;
+  GodName3: string | null;
+  GodName4: string | null;
+  Id: string | null;
+  IsDisabled: string | null;
+  IsMajorGod: string | null;
+  Language: string | null;
+  QuestState1: number | null;
+  QuestState2: number | null;
+  QuestState3: number | null;
+  QuestState4: number | null;
+  SelectionImage: string | null;
+  X: number | null;
+  Y: number | null;
+  _index: number | null;
+}
+
 export interface PantheonSouls {
   CapturedMonster: number | null;
   CapturedVessel: number | null;
@@ -6150,6 +6179,7 @@ export interface DB {
   NPCTextAudio: NPCTextAudio;
   OnKillAchievements: OnKillAchievements;
   PackFormation: PackFormation;
+  PantheonPanelLayout: PantheonPanelLayout;
   PantheonSouls: PantheonSouls;
   PassiveJewelRadii: PassiveJewelRadii;
   PassiveJewelSlots: PassiveJewelSlots;

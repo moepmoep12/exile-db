@@ -89,9 +89,6 @@
   "NPCTalk": {
     "error": "Invalid array length"
   },
-  "PantheonPanelLayout": {
-    "error": "Offset is outside the bounds of the DataView"
-  },
   "PerandusBosses": {
     "error": "Failed to find sequence for path Data/PerandusBosses.dat64"
   },
